@@ -59,3 +59,8 @@ gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'foundation-rails', '~> 5.0'
 gem 'webpacker', '~> 3.3'
+gem 'active_model_serializers'
+gem 'factory_bot_rails'
+gem "loofah", ">= 2.2.3"
+gem 'sprockets', '~>3.7.2'
+gem 'sprockets-es6'
