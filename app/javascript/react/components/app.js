@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+    };
+  }
+
+  render(){
+    return(
+      <Router history={browserHistory}>
+        <Route path='/'>
+        </Route>
+      </Router>
+    )
+  }
 }
 
 export default App
