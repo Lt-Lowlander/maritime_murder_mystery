@@ -1,6 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
   belongs_to :faction
-  attributes :id, :role, :character, :title, :tagline
+  attributes :id, :role, :position, :character, :title, :tagline
 
   has_one :char_story
   has_many :abilities
