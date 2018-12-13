@@ -7,7 +7,7 @@ Manifest - <i class="fas fa-address-book"></i>
   faction -   Crew <i class="fas fa-dharmachakra"></i>
   faction -   Passenger <i class="fas fa-cocktail"></i>
 
-Character User Icon - <i class="fas fa-user"></i>
+Character User Icon - <i class="fas fa-user-circle"></i>
   Personal Story - <i class="fas fa-scroll"></i>
   Goals - <i class="fas fa-tasks"></i>
   Other People and Beginner Tips - <i class="fas fa-users"></i>
@@ -33,8 +33,6 @@ Person of Interest / Suspect - <i class="fas fa-user-secret"></i>
 <i class="fas fa-cloud"></i>
 <i class="fas fa-wind"></i>
 <i class="fas fa-toilet-paper"></i>
-<i class="fas fa-user-circle"></i>  -Solid User circle
-<i class="far fa-user-circle"></i>  -Open User circle
 <i class="fas fa-info-circle"></i>
 <i class="fas fa-question"></i>
 <i class="far fa-question-circle"></i>
