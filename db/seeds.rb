@@ -75,7 +75,7 @@ beginner_tips = BeginnerTip.create!([
   ])
 
 #Create Other People
-other_people = OtherPeople.create!([
+other_people = OtherPerson.create!([
   {user_id: 6, lead_name: "Captain Hayat", lead_info: "You view the Captain as a role model. Hayat is very strict and efficient with the guards. Someday you may become the Captain of the Guards in Dakhma, and you can learn a lot from Hayat."},
   {user_id: 6, lead_name: "Abdul-Malik", lead_info: "The Grand Vizier is the Sultan’s most trusted friend. He is loyal to the Sultan and Princess Almeera. He has known and liked you since you were a child, but he would probably not like the fact that you were planning on sneaking away with the Princess."},
   {user_id: 6, lead_name: "Joharra", lead_info: "This young woman looks vaguely familiar. You wonder where you might have seen her before."},
