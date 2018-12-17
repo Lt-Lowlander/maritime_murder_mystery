@@ -1,4 +1,4 @@
 class OtherPersonSerializer < ActiveModel::Serializer
   belongs_to :user
-  attributes :lead_name, :lead_info
+  attributes :id, :lead_name, :lead_info
 end
