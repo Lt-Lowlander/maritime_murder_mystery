@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   resources :party
   resources :factions
   resources :rules, only: [:index]
-  resources :premise, except: [:show]
+  resources :narrative, except: [:show]
 
   namespace :api do
     namespace :v1 do
-      resources :premises
+      resources :narratives
       resources :rules
       resources :factions
       resources :users

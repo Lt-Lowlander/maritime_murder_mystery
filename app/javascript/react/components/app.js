@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Sleuth_HUD from './Sleuth_HUD';
 import PartyIndexContainer from '../containers/PartyIndexContainer';
 import ManifestContainer from '../containers/ManifestContainer';
+import RulesContainer from '../containers/RulesContainer';
 import VisitorLandingContainer from '../containers/VisitorLandingContainer';
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
           <IndexRoute component={Sleuth_HUD}/>
           <Route path='/party' component={PartyIndexContainer} />
           <Route path='/factions' component={ManifestContainer} />
+          <Route path='/rules' component={RulesContainer} />
         </Route>
       </Router>
     )

@@ -82,6 +82,13 @@ ActiveRecord::Schema.define(version: 2018_12_15_015829) do
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
+  create_table "narratives", force: :cascade do |t|
+    t.text "heading", null: false
+    t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "other_people", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "lead_name", null: false
@@ -98,13 +105,6 @@ ActiveRecord::Schema.define(version: 2018_12_15_015829) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_player_notes_on_user_id"
-  end
-
-  create_table "premises", force: :cascade do |t|
-    t.text "heading", null: false
-    t.text "content", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

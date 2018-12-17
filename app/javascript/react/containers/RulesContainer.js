@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RulesIndexTile from '../components/RulesIndexTile';
 
 class RulesContainer extends Component {
   constructor(props) {
@@ -31,14 +32,26 @@ class RulesContainer extends Component {
   }
 
   render(){
-      let structure = this.state.rules
+      const regulations = this.state.rules;
+      let structure = regulations.map(regl => {
+        return(
+          <RulesIndexTile
+            key={regl.id}
+            id={regl.id}
+            ruleName={regl.rule_name}
+            ruleDesc={regl.rule_desc}
+          />
+        )
+      })
     return(
       <div>
         <b>
           Rules
         </b><br></br>
         <div className="">
-          {structure}
+          <ul>
+            {structure}
+          </ul>
         </div>
       </div>
     )

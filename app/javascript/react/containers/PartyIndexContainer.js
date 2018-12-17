@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import NarrativeIndexTile from '../components/NarrativeIndexTile';
 
 class PartyIndexContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      premise: ''
+      narrative: []
     }
   }
 
   componentDidMount(){
-    fetch(`/api/v1/premises`, {
+    fetch(`/api/v1/narratives`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -24,22 +25,27 @@ class PartyIndexContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        premise: body[0].scene
+        narrative: body
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-      let beginning = this.state.premise
+      const lore = this.state.narrative;
+      let story = lore.map(tale => {
+        return(
+          <NarrativeIndexTile
+            key={tale.id}
+            id={tale.id}
+            heading={tale.heading}
+            content={tale.content}
+          />
+        )
+      })
     return(
-      <div>
-        <b>
-          Overview
-        </b><br></br>
-        <div className="">
-          {beginning}
-        </div>
+      <div className="">
+        {story}
       </div>
     )
   }

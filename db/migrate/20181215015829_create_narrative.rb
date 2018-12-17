@@ -1,6 +1,6 @@
-class CreatePremise < ActiveRecord::Migration[5.2]
+class CreateNarrative < ActiveRecord::Migration[5.2]
   def change
-    create_table :premises do |t|
+    create_table :narratives do |t|
       t.text :heading, null: false
       t.text :content, null: false
 

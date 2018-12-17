@@ -11,7 +11,7 @@ const Sleuth_HUD = props => {
       <Link to='/factions'>
         <i className="fas fa-address-book"></i>
       </Link>
-      <Link to='/party'>
+      <Link to='/rules'>
         <i className="fas fa-anchor"></i>
       </Link>
     </div>
