@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
-class PartyIndexContainer extends Component {
+class ManifestContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      premise: ''
     }
   }
 
   componentDidMount(){
-    fetch(`/api/v1/premises`, {
+    fetch(`/api/v1/factions`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -23,26 +22,20 @@ class PartyIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
+debugger
       this.setState({
-        premise: body[0].scene
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-      let beginning = this.state.premise
     return(
       <div>
-        <b>
-          Overview
-        </b><br></br>
-        <div className="">
-          {beginning}
-        </div>
+        "manifest"
       </div>
     )
   }
 }
 
-export default PartyIndexContainer;
+export default ManifestContainer;
