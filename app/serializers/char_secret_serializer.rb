@@ -1,4 +1,4 @@
 class CharSecretSerializer < ActiveModel::Serializer
   belongs_to :user
-  attributes :sec_desc
+  attributes :id, :sec_desc
 end

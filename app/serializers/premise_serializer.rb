@@ -1,3 +1,3 @@
 class PremiseSerializer < ActiveModel::Serializer
-  attributes :scene, :breaking_news
+  attributes :id, :content, :heading
 end

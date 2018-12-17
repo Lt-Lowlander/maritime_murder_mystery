@@ -101,8 +101,8 @@ ActiveRecord::Schema.define(version: 2018_12_15_015829) do
   end
 
   create_table "premises", force: :cascade do |t|
-    t.text "scene", null: false
-    t.text "breaking_news"
+    t.text "heading", null: false
+    t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

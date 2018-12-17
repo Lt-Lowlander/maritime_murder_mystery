@@ -1,3 +1,3 @@
 class Premise < ApplicationRecord
-  validates :scene, presence: true
+  validates :content, :heading, presence: true
 end
