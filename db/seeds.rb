@@ -4,6 +4,11 @@ factions = Faction.create!([
   {id: "2", fac_name: "Passengers"},
   ])
 
+#Create Premise
+premises = Premise.create!([
+  {heading: "Overview", content: "In early August in 1914 the American cruise liner SS Libertania set sail from New York, bound for Southampton. On 14 August the Captain requested that all crew and passengers meet him in the Grand Ballroom. In solemn tones, Captain Bayard announced that he had just been informed that German military forces had invaded Russia and Belgium, and that the British and French governments had declared war on Germany.\n\nThere was stunned silence from the assembled passengers and crew. Then, just as voices were getting louder, the lights went out. There were screams, and a shot. By the time the lights came on again, many people had left the ballroom and the Captain’s body was slumped on the floor. He had been shot dead.\n\nBut by whom?\n\nMurder at Sea is a murder mystery game set at the start of the First World War for 17 to 33 players, plus one or two hosts. It takes an evening to play, and is ideally suited for a buffet meal or finger food.\n\nEveryone invited to Murder at Sea is given a character with goals and objectives that they must complete by the end of the evening. Everyone has their own goals – and not all goals are compatible. If one person achieves their goals, another may fail. The passengers have various items, such as guns and money. They may also have abilities to help them uncover secrets and achieve their goals.\n\nThe passengers may form alliances, blackmail each other, steal items and money and maybe even try to kill one another. Along the way they may solve some of Murder at Sea’s mysteries. Who was at the secret Captain’s meeting? Who shot Captain Bayard – and why?\n\nJoin us aboard the Libertania and find out in Murder at Sea."},
+  ])
+
 # Create Characters
 users = User.create!([
   {email: "kal444h@gmail.com", password: "asdf123", faction_id: "1", role: "admin", position: "game_master", character: "Tiberius", title: "mysterious host", tagline: "heyyyyy"},
@@ -75,7 +80,7 @@ beginner_tips = BeginnerTip.create!([
   ])
 
 #Create Other People
-other_people = OtherPeople.create!([
+other_people = OtherPerson.create!([
   {user_id: 6, lead_name: "Captain Hayat", lead_info: "You view the Captain as a role model. Hayat is very strict and efficient with the guards. Someday you may become the Captain of the Guards in Dakhma, and you can learn a lot from Hayat."},
   {user_id: 6, lead_name: "Abdul-Malik", lead_info: "The Grand Vizier is the Sultan’s most trusted friend. He is loyal to the Sultan and Princess Almeera. He has known and liked you since you were a child, but he would probably not like the fact that you were planning on sneaking away with the Princess."},
   {user_id: 6, lead_name: "Joharra", lead_info: "This young woman looks vaguely familiar. You wonder where you might have seen her before."},

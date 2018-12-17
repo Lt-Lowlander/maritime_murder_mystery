@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-class PartyIndexContainer extends Component {
+class RulesContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      premise: ''
+      rules: []
     }
   }
 
   componentDidMount(){
-    fetch(`/api/v1/premises`, {
+    fetch(`/api/v1/rules`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -24,25 +24,25 @@ class PartyIndexContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        premise: body[0].scene
+        rules: body
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-      let beginning = this.state.premise
+      let structure = this.state.rules
     return(
       <div>
         <b>
-          Overview
+          Rules
         </b><br></br>
         <div className="">
-          {beginning}
+          {structure}
         </div>
       </div>
     )
   }
 }
 
-export default PartyIndexContainer;
+export default RulesContainer;

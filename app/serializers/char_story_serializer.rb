@@ -1,4 +1,4 @@
 class CharStorySerializer < ActiveModel::Serializer
   belongs_to :user
-  attributes :char_story
+  attributes :id, :char_story
 end

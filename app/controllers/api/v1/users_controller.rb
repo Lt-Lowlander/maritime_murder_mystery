@@ -1,11 +1,15 @@
 class Api::V1::UsersController < ApiController
 
   skip_before_action :verify_authenticity_token
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
 
   def index
-    users = User.where(faction_id: params[:faction_id]).order(id: :asc)
+    users = User.all.order(id: :asc)
     render json: users
   end
 
+  def show
+    user = User.where(id: params[:id])
+    render json: user
+  end
 end

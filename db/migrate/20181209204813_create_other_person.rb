@@ -1,4 +1,4 @@
-class CreateOtherPeople < ActiveRecord::Migration[5.2]
+class CreateOtherPerson < ActiveRecord::Migration[5.2]
   def change
     create_table :other_people do |t|
       t.belongs_to :user, null: false
