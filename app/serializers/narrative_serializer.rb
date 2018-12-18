@@ -1,3 +1,3 @@
 class NarrativeSerializer < ActiveModel::Serializer
-  attributes :id, :content, :heading
+  attributes :id, :heading, :content
 end

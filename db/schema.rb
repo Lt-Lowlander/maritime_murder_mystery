@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_015829) do
     t.string "character", null: false
     t.string "title", null: false
     t.string "tagline", null: false
+    t.string "attendee", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["faction_id"], name: "index_users_on_faction_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

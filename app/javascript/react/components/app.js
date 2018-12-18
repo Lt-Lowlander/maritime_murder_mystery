@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Sleuth_HUD from './Sleuth_HUD';
 import PartyIndexContainer from '../containers/PartyIndexContainer';
-import ManifestContainer from '../containers/ManifestContainer';
+import ManifestContainer from '../containers/manifest/ManifestContainer';
 import RulesContainer from '../containers/RulesContainer';
-import VisitorLandingContainer from '../containers/VisitorLandingContainer';
 
 class App extends Component {
   constructor(props){
@@ -28,7 +27,7 @@ class App extends Component {
     return(
       <Router history={browserHistory}>
         <Route path='/'>
-          <IndexRoute component={Sleuth_HUD}/>
+          <IndexRoute component={PartyIndexContainer}/>
           <Route path='/party' component={PartyIndexContainer} />
           <Route path='/factions' component={ManifestContainer} />
           <Route path='/rules' component={RulesContainer} />
