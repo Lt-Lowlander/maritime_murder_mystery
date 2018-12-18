@@ -5,5 +5,6 @@ class AddUserInfo < ActiveRecord::Migration[5.2]
     add_column :users, :character, :string, null: false
     add_column :users, :title, :string, null: false
     add_column :users, :tagline, :string, null: false
+    add_column :users, :attendee, :string, null: false
   end
 end

@@ -1,3 +1,3 @@
-class Premise < ApplicationRecord
+class Narrative < ApplicationRecord
   validates :content, :heading, presence: true
 end

@@ -5,7 +5,7 @@ Main Story -   <i class="fas fa-book-dead"></i>
 Rules of the Game - <i class="fas fa-anchor"></i>
 Manifest - <i class="fas fa-address-book"></i>
   faction -   Crew <i class="fas fa-dharmachakra"></i>
-  faction -   Passenger <i class="fas fa-cocktail"></i>
+  faction -   Passengers <i class="fas fa-cocktail"></i>
 
 Character User Icon - <i class="fas fa-user-circle"></i>
   Personal Story - <i class="fas fa-scroll"></i>

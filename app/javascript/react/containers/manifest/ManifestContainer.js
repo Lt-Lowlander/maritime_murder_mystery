@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import FactionsIndexContainer from './factionsIndex/FactionsIndexContainer';
 
 class ManifestContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      manifest: []
     }
   }
 
@@ -22,17 +24,28 @@ class ManifestContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-debugger
       this.setState({
+        manifest: body
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
+    let socialGroups = this.state.manifest;
+    let factions = socialGroups.map( clique => {
+      return(
+        < FactionsIndexContainer
+          key={clique.id}
+          id={clique.id}
+          group={clique.fac_name}
+          members={clique.users}
+        />
+      )
+    })
     return(
       <div>
-        "manifest"
+        {factions}
       </div>
     )
   }

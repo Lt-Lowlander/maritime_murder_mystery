@@ -1,4 +1,4 @@
-class GameRulesController < ApplicationController
+class RulesController < ApplicationController
   def index; end
   def new; end
   def update; end

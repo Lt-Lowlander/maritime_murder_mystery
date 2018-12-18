@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   belongs_to :faction
 
-  validates :role, :character, :title, :tagline, presence: true
+  validates :role, :attendee, :character, :title, :tagline, presence: true
 
   has_one :char_story
   has_many :abilities
