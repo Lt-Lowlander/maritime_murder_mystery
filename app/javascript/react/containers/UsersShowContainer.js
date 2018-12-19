@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import RulesIndexTile from '../components/RulesIndexTile';
 
-class RulesContainer extends Component {
+class UsersShowContainer extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      rules: []
-    }
+      userData: {}
+    };
   }
 
   componentDidMount(){
-    fetch(`/api/v1/rules`, {
+    fetch(`/api/v1/users/${this.props.params.id}`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -25,33 +24,19 @@ class RulesContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        rules: body
+        userData: body
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-      const regulations = this.state.rules;
-      let structure = regulations.map(regl => {
-        return(
-          <RulesIndexTile
-            key={regl.id}
-            id={regl.id}
-            ruleName={regl.rule_name}
-            ruleDesc={regl.rule_desc}
-          />
-        )
-      })
     return(
-      <div className="rules-heading">
-        Rules
-        <div>
-          {structure}
-        </div>
+      <div className="">
+        Whaddup, dog!
       </div>
     )
   }
 }
 
-export default RulesContainer;
+export default UsersShowContainer;

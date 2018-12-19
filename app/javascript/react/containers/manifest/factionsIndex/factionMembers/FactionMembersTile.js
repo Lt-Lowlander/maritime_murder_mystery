@@ -11,7 +11,10 @@ let FactionMembersTile = (props) => {
   return(
     <li className="cast-member-tile">
       <div>
-        {props.character}{rank}
+        <Link to={`/users/${props.id}`}>
+          {props.character}
+        </Link>
+        <span>{rank}</span>
       </div>
       <div>
         {props.title}
