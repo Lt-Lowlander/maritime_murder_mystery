@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FactionMembersTile from './factionMembers/FactionMembersTile';
+import GroupSymbolTile from '../../../components/GroupSymbolTile';
 
 class FactionsIndexContainer extends Component {
   constructor(props) {
@@ -39,7 +40,12 @@ class FactionsIndexContainer extends Component {
 
     return(
       <div>
-        {this.props.group} {group_symbol}
+        {this.props.group}
+        <span>
+          <GroupSymbolTile
+            group={this.props.id}
+            />
+        </span>
         <ul>
           {constituents}
         </ul>
