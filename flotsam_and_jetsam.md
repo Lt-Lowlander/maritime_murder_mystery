@@ -21,8 +21,20 @@ Character User Icon - <i class="fas fa-user-circle"></i>
 
 
 Person of Interest / Suspect - <i class="fas fa-user-secret"></i>
-
+Come Set Sail - <i class="fas fa-ship"></i>
  =====================================================================
+formatting for the Deco Border 
+ <div className="contain">
+   <div className="roman-border">
+       <span className="bg-first"></span>
+       <span className="bg-second"></span>
+       <span className="bg-third"></span>
+       <div>
+         {props.heading}
+       </div>
+   </div>
+ </div>
+
  =====================================================================
 
 <i class="fas fa-water"></i>

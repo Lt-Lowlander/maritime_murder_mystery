@@ -39,6 +39,7 @@ class ManifestContainer extends Component {
           key={clique.id}
           id={clique.id}
           group={clique.fac_name}
+          sign={clique.fac_sign}
           members={clique.users}
         />
       )

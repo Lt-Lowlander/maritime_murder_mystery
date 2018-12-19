@@ -1,0 +1,40 @@
+.veiled {
+  opacity: 0.0;
+}
+
+// Here's the css for the Deco Border styling
+.contain {
+    margin-left: 2rem;
+}
+    .roman-border {
+        position: relative;
+        text-decoration: none;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+    }
+        .roman-border span {
+          box-sizing: content-box;
+          position: absolute;
+          border: 1px solid;
+          height: 100%;
+        }
+        .bg-first {
+            top: 0;
+            left: -4px;
+            padding: 0 4px;
+            width: 100%;
+        }
+        .bg-second {
+            top: -4px;
+            left: 0;
+            padding: 4px 0;
+            width: 100%;
+        }
+        .bg-third {
+            top: -8px;
+            left: 4px;
+            padding: 8px 0;
+            width: -webkit-calc(100% - 8px);
+            width: calc(100% - 8px);
+        }

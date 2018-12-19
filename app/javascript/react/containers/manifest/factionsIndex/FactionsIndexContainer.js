@@ -38,12 +38,12 @@ class FactionsIndexContainer extends Component {
     })
 
     return(
-        <div>
-          {this.props.group} {group_symbol}
-          <ul>
-            {constituents}
-          </ul>
-        </div>
+      <div>
+        {this.props.group} {group_symbol}
+        <ul>
+          {constituents}
+        </ul>
+      </div>
     )
   }
 }
