@@ -15,3 +15,21 @@
  *= require foundation_and_overrides
 
  */
+
+.top-bar li {
+  list-style: none;
+}
+
+.title-area {
+  display: flex;
+}
+
+    .party-hud {
+      order: 1;
+    }
+    .factions-hud {
+      order: 2;
+    }
+    .rules-hud {
+      order: 3;
+    }
