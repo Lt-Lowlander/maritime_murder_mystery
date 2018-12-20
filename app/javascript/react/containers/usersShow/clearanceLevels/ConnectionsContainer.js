@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import LetterHeadTile from '../../../components/LetterHeadTile';
 
 class ConnectionsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewer: {}
+      patronId: "",
+      position: "",
+      group: "",
+      name: "",
     };
   }
 
@@ -25,21 +29,25 @@ class ConnectionsContainer extends Component {
     .then(body => {
 
       this.setState({
-        viewer: body
+        patronId: body.patron[0].id,
+        position: body.patron[0].position,
+        group: body.patron[0].faction_id,
+        name: body.patron[0].character
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-    document.getElementById("story").className = "origin-story-hud";
-    document.getElementById("goals").className = "goals-hud";
-    document.getElementById("secrets").className = "secrets-hud";
     document.getElementById("connections").className = "connections-hud presently";
-    document.getElementById("abilities").className = "abilities-hud";
-    document.getElementById("notes").className = "notes-hud";
     return(
       <div>
+        <LetterHeadTile
+          key={this.state.patronId}
+          position={this.state.position}
+          group={this.state.group}
+          name={this.state.name}
+          />
         <div className="page-heading">
           <div className="heading-icon">
             <i className="fas fa-users"></i>

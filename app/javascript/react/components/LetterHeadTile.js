@@ -1,5 +1,5 @@
 import React from 'react';
-import GroupSymbolTile from '../../../components/GroupSymbolTile';
+import GroupSymbolTile from './GroupSymbolTile';
 
 const LetterHeadTile = (props) => {
   let rank;

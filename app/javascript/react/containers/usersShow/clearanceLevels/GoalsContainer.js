@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LetterHeadTile from '../../../components/LetterHeadTile';
 
-class AbilitiesContainer extends Component {
+class GoalsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,7 +9,6 @@ class AbilitiesContainer extends Component {
       position: "",
       group: "",
       name: "",
-      abilities: [],
     };
   }
 
@@ -28,19 +27,19 @@ class AbilitiesContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
+debugger
       this.setState({
         patronId: body.patron[0].id,
         position: body.patron[0].position,
         group: body.patron[0].faction_id,
         name: body.patron[0].character,
-        abilities: body.patron.abilities
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-    document.getElementById("abilities").className = "abilities-hud presently";
+    document.getElementById("goals").className = "goals-hud presently";
     return(
       <div>
         <LetterHeadTile
@@ -51,16 +50,16 @@ class AbilitiesContainer extends Component {
           />
         <div className="page-heading">
           <div className="heading-icon">
-            <i className="fas fa-wind"></i>
+            <i className="fas fa-tasks"></i>
           </div>
           <div className="heading-text">
-            Abilities
+            Goals
           </div>
         </div>
-yo mcgeech
+Pistol Pete
       </div>
     )
   }
 }
 
-export default AbilitiesContainer;
+export default GoalsContainer;

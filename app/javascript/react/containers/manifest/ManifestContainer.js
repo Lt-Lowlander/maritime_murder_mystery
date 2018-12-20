@@ -8,6 +8,14 @@ class ManifestContainer extends Component {
       viewer: "",
       manifest: []
     }
+    this.evenKeel = this.evenKeel.bind(this)
+  }
+
+  evenKeel(hudBar){
+    let patrol = document.getElementById(hudBar)
+    if (patrol.style.display !== "flex") {
+      patrol.style.display = "none"
+    }
   }
 
   componentDidMount(){
@@ -34,6 +42,8 @@ class ManifestContainer extends Component {
   }
 
   render(){
+    document.getElementById("manifest").className = "factions-hud presently";
+    this.evenKeel("char-cons")
     let socialGroups = this.state.manifest;
     let factions = socialGroups.map( clique => {
       return(

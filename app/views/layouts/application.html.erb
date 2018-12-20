@@ -17,13 +17,13 @@
     <ul class="primary-section">
       <li class="event-hud">
         <ul class="mystery-console">
-          <li class="party-hud">
+          <li id="party" class="party-hud">
             <a href="/party"><i class="fas fa-book-dead"></i></a>
           </li>
-          <li class="rules-hud">
+          <li id="rules" class="rules-hud">
             <a href="/rules"><i class="far fa-compass"></i></a>
           </li>
-          <li class="factions-hud">
+          <li id="manifest" class="factions-hud">
             <a href="/factions"><i class="fas fa-address-book"></i></a>
           </li>
         </ul>
@@ -37,7 +37,7 @@
               function charConSwitch() {
                 var change = document.getElementById("char-cons");
                 if (change.style.display === "none"){
-                  change.style.display = "block";
+                  change.style.display = "flex";
                 } else {
                   change.style.display = "none";
                 }
