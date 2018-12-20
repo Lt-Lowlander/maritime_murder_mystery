@@ -2,7 +2,7 @@ Sign In - <i class="fas fa-sign-in-alt"></i>
 Sign Out - <i class="fas fa-sign-out-alt"></i>
 
 Main Story -   <i class="fas fa-book-dead"></i>
-Rules of the Game - <i class="fas fa-anchor"></i>
+Rules of the Game - <i class="far fa-compass"></i>
 Manifest - <i class="fas fa-address-book"></i>
   faction -   Crew <i class="fas fa-dharmachakra"></i>
   faction -   Passengers <i class="fas fa-cocktail"></i>
@@ -10,12 +10,12 @@ Manifest - <i class="fas fa-address-book"></i>
 Character User Icon - <i class="fas fa-user-circle"></i>
   Personal Story - <i class="fas fa-scroll"></i>
   Goals - <i class="fas fa-tasks"></i>
-  Other People and Beginner Tips - <i class="fas fa-users"></i>
-  Abilities - <i class="fas fa-cog"></i>
+  Other People and Beginner Tips (connections) - <i class="fas fa-users"></i>
+  Abilities - <i class="fas fa-wind"></i>
     Ability circle Used - <i class="fas fa-times-circle"></i>
     Ability circle Remaining - <i class="fas fa-dot-circle"></i>
   Secrets and Information - <i class="far fa-eye"></i>
-  Notes - <i class="far fa-compass"></i>
+  Notes - <i class="fas fa-search"></i>
     Delete - <i class="fas fa-trash-alt"></i>
     Edit - <i class="fas fa-edit"></i>
 
@@ -23,7 +23,7 @@ Character User Icon - <i class="fas fa-user-circle"></i>
 Person of Interest / Suspect - <i class="fas fa-user-secret"></i>
 Come Set Sail - <i class="fas fa-ship"></i>
  =====================================================================
-formatting for the Deco Border 
+formatting for the Deco Border
  <div className="contain">
    <div className="roman-border">
        <span className="bg-first"></span>
@@ -36,9 +36,8 @@ formatting for the Deco Border
  </div>
 
  =====================================================================
-
+<i class="fas fa-anchor"></i>
 <i class="fas fa-water"></i>
-<i class="fas fa-search"></i>   -Magnifying Glass  clues about people maybe?
 <i class="fas fa-bullhorn"></i>  -Announcements?
 <i class="fas fa-cloud-showers-heavy"></i>
 <i class="fas fa-tachometer-alt"></i>

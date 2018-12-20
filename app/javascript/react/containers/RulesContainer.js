@@ -45,7 +45,9 @@ class RulesContainer extends Component {
       })
     return(
       <div className="rules-heading">
-        Rules
+        <div className="page-heading">
+          <i className="far fa-compass"></i> Rules
+        </div>
         <div>
           {structure}
         </div>

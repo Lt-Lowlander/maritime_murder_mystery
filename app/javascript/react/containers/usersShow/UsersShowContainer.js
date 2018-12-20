@@ -31,7 +31,6 @@ class UsersShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-
       this.setState({
         viewer: body.viewer,
         clearance: body.clearance,
@@ -62,8 +61,13 @@ class UsersShowContainer extends Component {
     const personalizedLetterHead =
       <div>
         {letterHead}
-        <div>
+        <div className="page-heading">
           ({this.state.patronData.attendee})
+        </div>
+        <div>
+          {this.state.patronData.title}
+          <br/>
+          {this.state.patronData.tagline}
         </div>
       </div>
 

@@ -45,6 +45,9 @@ class PartyIndexContainer extends Component {
       })
     return(
       <div className="">
+        <div className="page-heading">
+          <i className="fas fa-book-dead"></i> Story
+        </div>
         {story}
       </div>
     )
