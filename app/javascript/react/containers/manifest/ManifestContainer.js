@@ -5,7 +5,16 @@ class ManifestContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      viewer: "",
       manifest: []
+    }
+    this.evenKeel = this.evenKeel.bind(this)
+  }
+
+  evenKeel(hudBar){
+    let patrol = document.getElementById(hudBar)
+    if (patrol.style.display !== "flex") {
+      patrol.style.display = "none"
     }
   }
 
@@ -25,27 +34,35 @@ class ManifestContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        manifest: body
+        manifest: body.factions,
+        viewer: body.viewer
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
+    document.getElementById("manifest").className = "factions-hud presently";
+    this.evenKeel("char-cons")
     let socialGroups = this.state.manifest;
     let factions = socialGroups.map( clique => {
       return(
-        < FactionsIndexContainer
+        <FactionsIndexContainer
           key={clique.id}
           id={clique.id}
+          viewer={this.state.viewer}
           group={clique.fac_name}
           sign={clique.fac_sign}
           members={clique.users}
+
         />
       )
     })
     return(
       <div>
+        <div className="page-heading">
+          <i className="fas fa-address-book"></i> Manifest
+        </div>
         {factions}
       </div>
     )

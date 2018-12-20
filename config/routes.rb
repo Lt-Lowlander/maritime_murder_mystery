@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :rules, only: [:index]
   resources :narrative, except: [:show]
   resources :users, only: [:show] do
+    resources :story, only: [:index]
     resources :abilities, only: [:index]
     resources :goals, only: [:index]
     resources :connections, only: [:index]

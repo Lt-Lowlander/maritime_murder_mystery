@@ -15,44 +15,29 @@
  *= require foundation_and_overrides
 
  */
+ .veiled { opacity: 0.0; }
+
+.hidden { display: none; }
+
+.presently { background-color:rgba(0, 255, 0, 1); }
 
 .top-bar li {
   list-style: none;
 }
-
-.event-hud {
-}
-    .mystery-console {
-      display: flex;
-    }
-        .party-hud {
-          order: 1;
-        }
-        .rules-hud {
-          order: 2;
-        }
-        .factions-hud {
-          order: 3;
-        }
-
-    .character-console {
-      display: flex;
-    }
-        .origin-story-hud {
-          order: 1;
-        }
-        .goals-hud {
-          order: 2;
-        }
-        .secrets-hud {
-          order: 3;
-        }
-        .abilities-hud {
-          order: 4;
-        }
-        .connections-hud {
-          order: 5;
-        }
-        .notes-hud {
-          order: 6;
-        }
+.event-hud { display: flex; }
+  .mystery-console { display: flex;
+                     order: 1;}
+    .party-hud { order: 1; }
+    .rules-hud { order: 2; }
+    .factions-hud { order: 3; }
+  .user-icon { order: 2;}
+.char-ops { display: flex; }
+  .character-console { display: flex;
+                       order: 1; }
+    .origin-story-hud { order: 1; }
+    .goals-hud { order: 2; }
+    .secrets-hud { order: 3; }
+    .abilities-hud { order: 4; }
+    .connections-hud { order: 5; }
+    .notes-hud { order: 6; }
+  .sign-out { order: 2; }

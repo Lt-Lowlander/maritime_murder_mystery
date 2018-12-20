@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import LetterHeadTile from '../../../components/LetterHeadTile';
+import GoalsIndexTile from '../../../components/GoalsIndexTile';
 
-class AbilitiesContainer extends Component {
+class GoalsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,7 +10,7 @@ class AbilitiesContainer extends Component {
       position: "",
       group: "",
       name: "",
-      abilities: [],
+      goals: []
     };
   }
 
@@ -33,14 +34,25 @@ class AbilitiesContainer extends Component {
         position: body.patron[0].position,
         group: body.patron[0].faction_id,
         name: body.patron[0].character,
-        abilities: body.patron.abilities
+        goals: body.patron[0].goals
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-    document.getElementById("abilities").className = "abilities-hud presently";
+    document.getElementById("goals").className = "goals-hud presently";
+    let objectives = this.state.goals.map( aim => {
+      return(
+        <GoalsIndexTile
+          key={aim.id}
+          id={aim.id}
+          task={aim.goal_objective}
+          desc={aim.goal_details}
+          checked={aim.goal_achieved}
+        />
+      )
+    })
     return(
       <div>
         <LetterHeadTile
@@ -51,16 +63,16 @@ class AbilitiesContainer extends Component {
           />
         <div className="page-heading">
           <div className="heading-icon">
-            <i className="fas fa-wind"></i>
+            <i className="fas fa-tasks"></i>
           </div>
           <div className="heading-text">
-            Abilities
+            Goals
           </div>
         </div>
-yo mcgeech
+        {objectives}
       </div>
     )
   }
 }
 
-export default AbilitiesContainer;
+export default GoalsIndexContainer;

@@ -7,6 +7,14 @@ class RulesContainer extends Component {
     this.state = {
       rules: []
     }
+    this.evenKeel = this.evenKeel.bind(this)
+  }
+
+  evenKeel(hudBar){
+    let patrol = document.getElementById(hudBar)
+    if (patrol.style.display !== "flex") {
+      patrol.style.display = "none"
+    }
   }
 
   componentDidMount(){
@@ -32,6 +40,8 @@ class RulesContainer extends Component {
   }
 
   render(){
+      document.getElementById("rules").className = "rules-hud presently";
+      this.evenKeel("char-cons")
       const regulations = this.state.rules;
       let structure = regulations.map(regl => {
         return(
@@ -45,7 +55,9 @@ class RulesContainer extends Component {
       })
     return(
       <div className="rules-heading">
-        Rules
+        <div className="page-heading">
+          <i className="far fa-compass"></i> Rules
+        </div>
         <div>
           {structure}
         </div>

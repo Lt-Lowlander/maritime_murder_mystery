@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LetterHeadTile from './clearanceLevels/LetterHeadTile';
+import LetterHeadTile from '../../components/LetterHeadTile';
 
 class UsersShowContainer extends Component {
   constructor(props) {
@@ -7,12 +7,7 @@ class UsersShowContainer extends Component {
     this.state = {
       viewer: "",
       clearance: "",
-      patronData: {},
-      abilitiesList: [],
-      tipsList: [],
-      goalsList: [],
-      otherPeopleList: [],
-      playerNotesList: [],
+      patronData: {}
     };
   }
 
@@ -31,39 +26,36 @@ class UsersShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-
       this.setState({
         viewer: body.viewer,
         clearance: body.clearance,
-        patronData: body.patron[0],
-        abilitiesList: body.patron[0].abilities,
-        tipsList: body.patron[0].beginner_tips,
-        goalsList: body.patron[0].goals,
-        otherPeopleList: body.patron[0].other_people,
-        playerNotesList: body.patron[0].player_notes,
+        patronData: body.patron[0]
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
+    document.getElementById("story").className = "origin-story-hud presently";
     const viewerClearance = this.state.clearance
     const letterHead =
       <LetterHeadTile
         key={this.state.patronData.id}
-        id={this.state.patronData.id}
         position={this.state.patronData.position}
         group={this.state.patronData.faction_id}
         name={this.state.patronData.character}
-        title={this.state.patronData.title}
-        tagline={this.state.patronData.tagline}
       />
 
     const personalizedLetterHead =
       <div>
         {letterHead}
-        <div>
+        <div className="page-heading">
           ({this.state.patronData.attendee})
+        </div>
+        <div>
+          {this.state.patronData.title}
+          <br/>
+          {this.state.patronData.tagline}
         </div>
       </div>
 
@@ -82,6 +74,24 @@ class UsersShowContainer extends Component {
       permittedDisplay =
       <div>
         {personalizedLetterHead}
+      </div>
+    } else if (viewerClearance == "character") {
+      permittedDisplay =
+      <div>
+        {letterHead}
+        <div>
+          <div className="page-heading">
+            <div className="heading-icon">
+              <i className="fas fa-scroll"></i>
+            </div>
+            <div className="heading-text">
+              Character Background
+            </div>
+          </div>
+        </div>
+        <div>
+          {this.state.patronData.char_story.char_story}
+        </div>
       </div>
     }
     return(

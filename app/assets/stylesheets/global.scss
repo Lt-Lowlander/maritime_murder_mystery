@@ -1,6 +1,14 @@
-.veiled {
-  opacity: 0.0;
+.page-heading {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
+    .heading-icon {
+      order: 1;
+    }
+    .heading-text {
+      order: 2;
+    }
 
 // Here's the css for the Deco Border styling
 .contain {

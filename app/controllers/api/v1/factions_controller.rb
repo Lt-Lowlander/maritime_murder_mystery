@@ -3,13 +3,24 @@ class Api::V1::FactionsController < ApiController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    factions = Faction.all.order(id: :asc)
-    render json: factions
+    if current_user
+      fac_payload = {
+        viewer: "familiar",
+        factions: Faction.all.order(id: :asc)
+      }
+      render json: fac_payload, include: ["users"]
+    else
+      fac_payload = {
+        viewer: "stranger",
+        factions: Faction.all.order(id: :asc)
+      }
+      render json: fac_payload, include: ["users"]
+    end
   end
 
-  def show
-    fac = Faction.where(id: params[:id])
-    render json: fac, include: ["users"]
-  end
+  # def show
+  #   fac = Faction.where(id: params[:id])
+  #   render json: fac, include: ["users"]
+  # end
 
 end

@@ -1,5 +1,5 @@
 import React from 'react';
-import GroupSymbolTile from '../../../components/GroupSymbolTile';
+import GroupSymbolTile from './GroupSymbolTile';
 
 const LetterHeadTile = (props) => {
   let rank;
@@ -7,14 +7,15 @@ const LetterHeadTile = (props) => {
     rank = <div>{props.position}</div>
   }
   return(
-    <div className="visitor-tile">
+    <div className="visitor-tile page-heading">
       {rank}
       <div>
-        -= <span>
-          <GroupSymbolTile
-          group={props.group}
-          />
-        </span>
+        -=
+        <span>  </span>
+        <GroupSymbolTile
+        group={props.group}
+        />
+        <span>  </span>
         {props.name} =-
         '(some floral decoration beflanking the name)'
       </div>

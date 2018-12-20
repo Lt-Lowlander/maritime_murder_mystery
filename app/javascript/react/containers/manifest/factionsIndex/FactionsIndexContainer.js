@@ -22,6 +22,7 @@ class FactionsIndexContainer extends Component {
         <FactionMembersTile
           key={indiv.id}
           id={indiv.id}
+          viewer={this.props.viewer}
           role={indiv.role}
           attendee={indiv.attendee}
           character={indiv.character}
@@ -34,12 +35,11 @@ class FactionsIndexContainer extends Component {
 
     return(
       <div>
+        <GroupSymbolTile
+          group={this.props.id}
+        />
+        <span>  </span>
         {this.props.group}
-        <span>
-          <GroupSymbolTile
-            group={this.props.id}
-            />
-        </span>
         <ul>
           {constituents}
         </ul>

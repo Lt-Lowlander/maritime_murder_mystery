@@ -44,7 +44,35 @@ users = User.create!([
 
 #
 char_stories = CharStory.create!([
+  {user_id: 1, char_story: 'aa'},
+  {user_id: 2, char_story: 'bb'},
+  {user_id: 3, char_story: 'a'},
+  {user_id: 4, char_story: 'b'},
+  {user_id: 5, char_story: 'c'},
   {user_id: 6, char_story: "You are a young prince from the neighboring kingdom of Dakhma. Since you are your father’s third son, you will not inherit the throne, so you have been training to someday become Captain of Dakhma’s Guard. A week ago, though, you were invited to a banquet where Princess Almeera’s father would choose her future husband. Your father thought that it was an amazing opportunity to inherit a throne, but that isn’t why you were keen. You have been in love with Princess Almeera since you used to play together as children. You have never told her how you feel, because you are worried she won’t feel the same way.\n\nThis morning you arrived at the Sultan’s palace, and met a prince named Amir Barad. Prince Amir Barad seemed overly confident that he would be chosen. The Grand Vizier seemed interested in you and in Prince Amir Barad, and spent time talking to each of you. However, when the dinner party started, the Sultan ignored you both: he spent all his time talking to a newly-arrived prince you had never seen before. His name was Prince Ala’ ad-Din, and he seemed arrogant. You noticed that he was cruel to the servants and worried that if he were chosen, he would mistreat the princess. While watching Prince Ala’ ad-Din, you noticed he had a bag he never let go of. You were curious what was in the bag, so you purposely bumped into him, and the bag fell to the floor. An old oil lamp poked out of the top of the bag. Prince Ala’ ad-Din quickly picked up the bag, stuffing the oil lamp back inside and called you a fool. You were left to wonder why the prince carried around an oil lamp – surely if he needed light, his servants should carry a lamp for him?\n\nWhen the Sultan announced that Prince Ala’ ad-Din would marry the princess, you knew you had to do something. You wrote the princess a letter telling her that you didn’t think it was fair that her father had not consulted with her before announcing the engagement. You invited her to meet you in the marketplace and run away to your kingdom, where she could negotiate with her father from a safe distance. You wrote that you just wanted to help, and she would have no obligation towards you. As you were about to sign your name, you stopped. Would Princess Almeera still come if she knew it was you? Both Ala’ ad-Din and Amir Barad were much more handsome... you signed the letter: Sincerely, Someone Who Cares. Then you stepped outside the banquet hall and gave the letter to a woman named Cantara, who was passing by, to deliver for you. You didn’t go back to dinner: instead, you packed your bags and headed to the marketplace to meet the princess.\n\nWhile you waited you let your thoughts wander. Last month, your brother returned from this city with a magic carpet, which he said he bought in this very marketplace. If Princess Almeera runs away with you, you’d like to take her on a magic carpet ride, and show her the sights of Dakhma. While you’re here you might as well try to find one for yourself, so you don’t have to borrow your brother’s. Magic carpets are illegal in this kingdom, so if you do get hold of one, you will have to keep it hidden. After a while you noticed that guards had surrounded the marketplace and the Grand Vizier had arrived. You heard whispered voices saying Princess Almeera’s fiancé had been murdered!\n\nIf Prince Ala’ ad-Din is dead, then you might still have a chance to be chosen as Princess Almeera’s fiancé! Maybe you should speak to the Grand Vizier and ask that he and the Sultan reconsider you. However, if things don’t turn out well and some other prince is chosen, the Princess may still want to run away with you. You don’t see her anywhere, but she might have disguised herself to sneak out of the palace. If the princess hasn’t come, you can at least stick close to Captain Hayat and learn how to be a good Captain of the Guards. You have heard rumors of a Band of Forty Thieves that haunts the alleyways at night: maybe the Captain can use your help in stopping them. You really hate thieves!"},
+  {user_id: 7, char_story: 'd'},
+  {user_id: 8, char_story: 'e'},
+  {user_id: 9, char_story: 'f'},
+  {user_id: 10, char_story: 'g'},
+  {user_id: 11, char_story: 'h'},
+  {user_id: 12, char_story: 'i'},
+  {user_id: 13, char_story: 'j'},
+  {user_id: 14, char_story: 'k'},
+  {user_id: 15, char_story: 'l'},
+  {user_id: 16, char_story: 'm'},
+  {user_id: 17, char_story: 'n'},
+  {user_id: 18, char_story: 'o'},
+  {user_id: 19, char_story: 'p'},
+  {user_id: 20, char_story: 'q'},
+  {user_id: 21, char_story: 'r'},
+  {user_id: 22, char_story: 's'},
+  {user_id: 23, char_story: 't'},
+  {user_id: 24, char_story: 'u'},
+  {user_id: 25, char_story: 'v'},
+  {user_id: 26, char_story: 'w'},
+  {user_id: 27, char_story: 'x'},
+  {user_id: 28, char_story: 'y'},
+  {user_id: 29, char_story: 'z'},
   ])
 
 #Create Goals
