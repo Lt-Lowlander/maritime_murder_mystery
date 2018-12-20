@@ -24,18 +24,21 @@ class Api::V1::UsersController < ApiController
     if !current_user
       guest_payload = {
         viewer: "",
+        clearance: "visitor",
         patron: User.where(id: params[:id])
       }
       render json: guest_payload, include: ["faction"]
     elsif current_user && current_user.role == "member" && current_user.id != beacon.values[0].to_i
       member_payload = {
         viewer: current_user.id,
+        clearance: "member",
         patron: User.where(id: params[:id])
       }
       render json: member_payload, include: ["faction", "player_notes"]
     elsif (current_user.role == "member" && current_user.id == beacon.values[0].to_i) || current_user.role == "admin"
       ownership_payload = {
         viewer: current_user.id,
+        clearance: "character",
         patron: User.where(id: params[:id])
       }
       render json: ownership_payload, include: ["faction", "abilities", "beginner_tips", "char_info", "char_secret", "char_story", "goals", "other_people", "player_notes"]

@@ -10,12 +10,6 @@ class FactionsIndexContainer extends Component {
   }
 
   render(){
-    let group_symbol;
-      if (this.props.group === "Crew") {
-        group_symbol = <i className="fas fa-dharmachakra"></i>
-      } else if (this.props.group === "Passengers") {
-        group_symbol = <i className="fas fa-cocktail"></i>
-      }
     let orderedGroup = this.props.members.sort(function(a, b){return a.id - b.id});
     let constituents = orderedGroup.map( indiv => {
       let rank;
