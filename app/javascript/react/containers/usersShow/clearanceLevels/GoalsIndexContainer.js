@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import LetterHeadTile from '../../../components/LetterHeadTile';
+import GoalsIndexTile from '../../../components/GoalsIndexTile';
 
-class GoalsContainer extends Component {
+class GoalsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,6 +10,7 @@ class GoalsContainer extends Component {
       position: "",
       group: "",
       name: "",
+      goals: []
     };
   }
 
@@ -27,12 +29,12 @@ class GoalsContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-debugger
       this.setState({
         patronId: body.patron[0].id,
         position: body.patron[0].position,
         group: body.patron[0].faction_id,
         name: body.patron[0].character,
+        goals: body.patron[0].goals
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -40,6 +42,17 @@ debugger
 
   render(){
     document.getElementById("goals").className = "goals-hud presently";
+    let objectives = this.state.goals.map( aim => {
+      return(
+        <GoalsIndexTile
+          key={aim.id}
+          id={aim.id}
+          task={aim.goal_objective}
+          desc={aim.goal_details}
+          checked={aim.goal_achieved}
+        />
+      )
+    })
     return(
       <div>
         <LetterHeadTile
@@ -56,10 +69,10 @@ debugger
             Goals
           </div>
         </div>
-Pistol Pete
+        {objectives}
       </div>
     )
   }
 }
 
-export default GoalsContainer;
+export default GoalsIndexContainer;

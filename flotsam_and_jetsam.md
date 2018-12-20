@@ -10,6 +10,8 @@ Manifest - <i class="fas fa-address-book"></i>
 Character User Icon - <i class="fas fa-user-circle"></i>
   Personal Story - <i class="fas fa-scroll"></i>
   Goals - <i class="fas fa-tasks"></i>
+    Remaining - <i class="far fa-square"></i>
+    Accomplished - <i class="fas fa-check"></i>
   Other People and Beginner Tips (connections) - <i class="fas fa-users"></i>
   Abilities - <i class="fas fa-wind"></i>
     Ability circle Used - <i class="fas fa-times-circle"></i>
@@ -42,7 +44,7 @@ formatting for the Deco Border
 <i class="fas fa-crow"></i>
 <i class="fas fa-fighter-jet"></i>
 <i class="fas fa-flask"></i>
- 
+
 
 <i class="fas fa-anchor"></i>
 <i class="fas fa-water"></i>
