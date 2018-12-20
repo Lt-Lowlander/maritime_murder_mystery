@@ -14,15 +14,43 @@
 <body>
 
   <nav id="navbar" class="top-bar">
-    <ul class="title-area">
-      <li class="party-hud">
-        <a href="/party"><i class="fas fa-book-dead"></i></a>
+    <ul class="event-hud">
+      <li>
+        <ul class="mystery-console">
+          <li class="party-hud">
+            <a href="/party"><i class="fas fa-book-dead"></i></a>
+          </li>
+          <li class="rules-hud">
+            <a href="/rules"><i class="fas fa-anchor"></i></a>
+          </li>
+          <li class="factions-hud">
+            <a href="/factions"><i class="fas fa-address-book"></i></a>
+          </li>
+        </ul>
       </li>
-      <li class="factions-hud">
-        <a href="/factions"><i class="fas fa-address-book"></i></a>
-      </li>
-      <li class="rules-hud">
-        <a href="/rules"><i class="fas fa-anchor"></i></a>
+      <li>
+        <ul class="character-console">
+          <%- if current_user -%>
+          <li class="origin-story-hud">
+            <a href="/users/<%=current_user.id%>/story"><i class="fas fa-scroll"></i></a>
+          </li>
+          <li class="goals-hud">
+            <a href="/users/<%=current_user.id%>/goals"><i class="fas fa-tasks"></i></a>
+          </li>
+          <li class="secrets-hud">
+            <a href="/users/<%=current_user.id%>/secrets"><i class="far fa-eye"></i></a>
+          </li>
+          <li class="connections-hud">
+            <a href="/users/<%=current_user.id%>/connections"><i class="fas fa-users"></i></a>
+          </li>
+          <li class="abilities-hud">
+            <a href="/users/<%=current_user.id%>/abilities"><i class="fas fa-wind"></i></a>
+          </li>
+          <li class="notes-hud">
+            <a href="/users/<%=current_user.id%>/notes"><i class="fas fa-search"></i></a>
+          </li>
+          <%- end -%>
+        </ul>
       </li>
     </ul>
 

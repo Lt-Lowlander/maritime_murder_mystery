@@ -20,16 +20,39 @@
   list-style: none;
 }
 
-.title-area {
-  display: flex;
+.event-hud {
 }
+    .mystery-console {
+      display: flex;
+    }
+        .party-hud {
+          order: 1;
+        }
+        .rules-hud {
+          order: 2;
+        }
+        .factions-hud {
+          order: 3;
+        }
 
-    .party-hud {
-      order: 1;
+    .character-console {
+      display: flex;
     }
-    .factions-hud {
-      order: 2;
-    }
-    .rules-hud {
-      order: 3;
-    }
+        .origin-story-hud {
+          order: 1;
+        }
+        .goals-hud {
+          order: 2;
+        }
+        .secrets-hud {
+          order: 3;
+        }
+        .abilities-hud {
+          order: 4;
+        }
+        .connections-hud {
+          order: 5;
+        }
+        .notes-hud {
+          order: 6;
+        }

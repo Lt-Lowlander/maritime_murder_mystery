@@ -8,9 +8,9 @@ const GroupSymbolTile = (props) => {
     symbol = <i className="fas fa-cocktail"></i>
   }
   return(
-    <div>
+    <span>
       {symbol}
-    </div>
+    </span>
   )
 }
 

@@ -7,7 +7,13 @@ Rails.application.routes.draw do
   resources :factions
   resources :rules, only: [:index]
   resources :narrative, except: [:show]
-  resources :users
+  resources :users, only: [:show] do
+    resources :abilities, only: [:index]
+    resources :goals, only: [:index]
+    resources :connections, only: [:index]
+    resources :secrets, only: [:index]
+    resources :notes, only: [:index]
+  end
 
   namespace :api do
     namespace :v1 do

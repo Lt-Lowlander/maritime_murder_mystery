@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 // similar to the project index tile
-let FactionMembersTile = (props) => {
+const FactionMembersTile = (props) => {
   let rank;
   if (props.position !=="") {
     rank =
