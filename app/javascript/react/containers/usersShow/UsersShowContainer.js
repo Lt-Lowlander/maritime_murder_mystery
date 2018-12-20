@@ -7,12 +7,7 @@ class UsersShowContainer extends Component {
     this.state = {
       viewer: "",
       clearance: "",
-      patronData: {},
-      abilitiesList: [],
-      tipsList: [],
-      goalsList: [],
-      otherPeopleList: [],
-      playerNotesList: [],
+      patronData: {}
     };
   }
 
@@ -34,12 +29,7 @@ class UsersShowContainer extends Component {
       this.setState({
         viewer: body.viewer,
         clearance: body.clearance,
-        patronData: body.patron[0],
-        abilitiesList: body.patron[0].abilities,
-        tipsList: body.patron[0].beginner_tips,
-        goalsList: body.patron[0].goals,
-        otherPeopleList: body.patron[0].other_people,
-        playerNotesList: body.patron[0].player_notes,
+        patronData: body.patron[0]
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));

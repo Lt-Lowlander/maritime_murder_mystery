@@ -22,6 +22,7 @@ Character User Icon - <i class="fas fa-user-circle"></i>
 
 Person of Interest / Suspect - <i class="fas fa-user-secret"></i>
 Come Set Sail - <i class="fas fa-ship"></i>
+Leaf Sprig - <i class="fab fa-pagelines"></i>
  =====================================================================
 formatting for the Deco Border
  <div className="contain">
@@ -36,6 +37,13 @@ formatting for the Deco Border
  </div>
 
  =====================================================================
+<i class="fas fa-pen-square"></i>
+<i class="far fa-sticky-note"></i>
+<i class="fas fa-crow"></i>
+<i class="fas fa-fighter-jet"></i>
+<i class="fas fa-flask"></i>
+ 
+
 <i class="fas fa-anchor"></i>
 <i class="fas fa-water"></i>
 <i class="fas fa-bullhorn"></i>  -Announcements?

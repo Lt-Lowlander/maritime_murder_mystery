@@ -32,9 +32,22 @@ class AbilitiesContainer extends Component {
   }
 
   render(){
-
+    document.getElementById("story").className = "origin-story-hud";
+    document.getElementById("goals").className = "goals-hud";
+    document.getElementById("secrets").className = "secrets-hud";
+    document.getElementById("connections").className = "connections-hud";
+    document.getElementById("abilities").className = "abilities-hud presently";
+    document.getElementById("notes").className = "notes-hud";
     return(
       <div>
+        <div className="page-heading">
+          <div className="heading-icon">
+            <i className="fas fa-wind"></i>
+          </div>
+          <div className="heading-text">
+            Abilities
+          </div>
+        </div>
 yo mcgeech
       </div>
     )

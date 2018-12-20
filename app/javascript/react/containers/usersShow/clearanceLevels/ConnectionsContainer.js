@@ -32,9 +32,22 @@ class ConnectionsContainer extends Component {
   }
 
   render(){
-
+    document.getElementById("story").className = "origin-story-hud";
+    document.getElementById("goals").className = "goals-hud";
+    document.getElementById("secrets").className = "secrets-hud";
+    document.getElementById("connections").className = "connections-hud presently";
+    document.getElementById("abilities").className = "abilities-hud";
+    document.getElementById("notes").className = "notes-hud";
     return(
       <div>
+        <div className="page-heading">
+          <div className="heading-icon">
+            <i className="fas fa-users"></i>
+          </div>
+          <div className="heading-text">
+            Other People & Beginner Tips
+          </div>
+        </div>
 later, joben
       </div>
     )
