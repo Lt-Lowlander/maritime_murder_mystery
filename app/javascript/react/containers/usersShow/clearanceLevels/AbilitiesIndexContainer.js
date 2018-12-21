@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import LetterHeadTile from '../../../components/LetterHeadTile';
+import AbilitiesIndexTile from '../../../components/AbilitiesIndexTile';
 
-class ConnectionsContainer extends Component {
+class AbilitiesIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,6 +10,7 @@ class ConnectionsContainer extends Component {
       position: "",
       group: "",
       name: "",
+      abilities: []
     };
   }
 
@@ -27,19 +29,33 @@ class ConnectionsContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-
       this.setState({
         patronId: body.patron[0].id,
         position: body.patron[0].position,
         group: body.patron[0].faction_id,
-        name: body.patron[0].character
+        name: body.patron[0].character,
+        abilities: body.patron[0].abilities
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-    document.getElementById("connections").className = "connections-hud presently";
+    document.getElementById("abilities").className = "abilities-hud presently";
+    const skillSum = this.state.abilities.length;
+    let powers = this.state.abilities.map(skill => {
+      return(
+        <AbilitiesIndexTile
+          key={skill.id}
+          id={skill.id}
+          name={skill.power_name}
+          desc={skill.power_desc}
+          chargesTotal={skill.quant_total}
+          chargesFresh={skill.quant_left}
+          chargesUsed={skill.quant_used}
+        />
+      )
+    })
     return(
       <div>
         <LetterHeadTile
@@ -50,16 +66,23 @@ class ConnectionsContainer extends Component {
           />
         <div className="page-heading">
           <div className="heading-icon">
-            <i className="fas fa-users"></i>
+            <i className="fas fa-wind"></i>
           </div>
           <div className="heading-text">
-            Other People & Beginner Tips
+            Abilities
           </div>
         </div>
-later, joben
+        <div>
+          <div>
+            You have these {skillSum} abilities available to you:
+          </div>
+          <div>
+            {powers}
+          </div>
+        </div>
       </div>
     )
   }
 }
 
-export default ConnectionsContainer;
+export default AbilitiesIndexContainer;
