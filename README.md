@@ -7,7 +7,9 @@ This project serves as a proof-of-concept reference guide to help facilitate mur
 * On the web: https://murder-at-sea.herokuapp.com/
 
 * Local Deployment instructions:
+
   (for best results, run on a unix-based OS, with Ruby 2.4.5 or higher installed)
+
 
   A) In one tab of your command line application run:
     1)  $ ruby shell_commands.rb
