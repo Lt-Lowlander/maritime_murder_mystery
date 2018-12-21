@@ -8,8 +8,7 @@ This project serves as a proof-of-concept reference guide to help facilitate mur
 
 * Local Deployment instructions:
 
-  (for best results, run on a unix-based OS, with Ruby 2.4.5 or higher installed)
-
+  (for best results, run on a unix-based OS, with Ruby 2.4.5 or higher)
 
   A) In one tab of your command line application run:
     1)  $ ruby shell_commands.rb
