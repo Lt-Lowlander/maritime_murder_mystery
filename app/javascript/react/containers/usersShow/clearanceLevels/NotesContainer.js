@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LetterHeadTile from '../../../components/LetterHeadTile';
 
 class NotesContainer extends Component {
   constructor(props) {
@@ -42,12 +41,6 @@ class NotesContainer extends Component {
     document.getElementById("notes").className = "notes-hud presently";
     return(
       <div>
-        <LetterHeadTile
-          key={this.state.patronId}
-          position={this.state.position}
-          group={this.state.group}
-          name={this.state.name}
-          />
         <div className="page-heading">
           <div className="heading-icon">
             <i className="fas fa-search"></i>
