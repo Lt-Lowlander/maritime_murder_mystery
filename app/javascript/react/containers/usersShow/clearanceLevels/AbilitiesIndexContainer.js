@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import LetterHeadTile from '../../../components/LetterHeadTile';
+import AbilitiesIndexTile from '../../../components/AbilitiesIndexTile';
 
-class AbilitiesContainer extends Component {
+class AbilitiesIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,7 +10,7 @@ class AbilitiesContainer extends Component {
       position: "",
       group: "",
       name: "",
-      abilities: [],
+      abilities: []
     };
   }
 
@@ -33,7 +34,7 @@ class AbilitiesContainer extends Component {
         position: body.patron[0].position,
         group: body.patron[0].faction_id,
         name: body.patron[0].character,
-        abilities: body.patron.abilities
+        abilities: body.patron[0].abilities
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -41,6 +42,19 @@ class AbilitiesContainer extends Component {
 
   render(){
     document.getElementById("abilities").className = "abilities-hud presently";
+    let powers = this.state.abilities.map(skill => {
+      return(
+        <AbilitiesIndexTile
+          key={skill.id}
+          id={skill.id}
+          name={skill.power_name}
+          desc={skill.power_desc}
+          chargesTotal={skill.quant_total}
+          chargesFresh={skill.quant_left}
+          chargesUsed={skill.quant_used}
+        />
+      )
+    })
     return(
       <div>
         <LetterHeadTile
@@ -57,10 +71,10 @@ class AbilitiesContainer extends Component {
             Abilities
           </div>
         </div>
-yo mcgeech
+        {powers}
       </div>
     )
   }
 }
 
-export default AbilitiesContainer;
+export default AbilitiesIndexContainer;
