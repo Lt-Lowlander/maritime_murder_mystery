@@ -1,6 +1,9 @@
 Sign In - <i class="fas fa-sign-in-alt"></i>
 Sign Out - <i class="fas fa-sign-out-alt"></i>
 
+Anchors Aweigh - <i class="fas fa-ship"></i>
+Get Underway!
+
 Main Story -   <i class="fas fa-book-dead"></i>
 Rules of the Game - <i class="far fa-compass"></i>
 Manifest - <i class="fas fa-address-book"></i>
@@ -8,6 +11,9 @@ Manifest - <i class="fas fa-address-book"></i>
   faction -   Passengers <i class="fas fa-cocktail"></i>
 
 Character User Icon - <i class="fas fa-user-circle"></i>
+    <i class="fas fa-caret-down"></i>
+    <i class="fas fa-caret-up"></i>
+
   Personal Story - <i class="fas fa-scroll"></i>
   Goals - <i class="fas fa-tasks"></i>
     Remaining - <i class="far fa-square"></i>
@@ -23,7 +29,6 @@ Character User Icon - <i class="fas fa-user-circle"></i>
 
 
 Person of Interest / Suspect - <i class="fas fa-user-secret"></i>
-Come Set Sail - <i class="fas fa-ship"></i>
 Leaf Sprig - <i class="fab fa-pagelines"></i>
  =====================================================================
 formatting for the Deco Border

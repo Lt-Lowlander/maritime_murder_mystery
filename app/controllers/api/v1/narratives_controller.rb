@@ -4,8 +4,16 @@ class Api::V1::NarrativesController < ApiController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    narratives = Narrative.all.order(id: :desc)
-    render json: narratives
+    if current_user
+      viewer = "onboard"
+    else
+      viewer = "overboard"
+    end
+    narrative_payload = {
+      viewer: viewer,
+      narratives: Narrative.all.order(id: :desc)
+    }
+    render json: narrative_payload
   end
 
 end
