@@ -7,7 +7,7 @@ import UsersShowContainer from '../containers/usersShow/UsersShowContainer';
 import GoalsIndexContainer from '../containers/usersShow/clearanceLevels/GoalsIndexContainer';
 import SecretsContainer from '../containers/usersShow/clearanceLevels/SecretsContainer';
 import AbilitiesIndexContainer from '../containers/usersShow/clearanceLevels/AbilitiesIndexContainer';
-import ConnectionsContainer from '../containers/usersShow/clearanceLevels/ConnectionsContainer';
+import ConnectionsIndexContainer from '../containers/usersShow/clearanceLevels/ConnectionsIndexContainer';
 import NotesContainer from '../containers/usersShow/clearanceLevels/NotesContainer';
 
 class App extends Component {
@@ -41,7 +41,7 @@ class App extends Component {
           <Route path='/users/:id/goals' component={GoalsIndexContainer} />
           <Route path='/users/:id/secrets' component={SecretsContainer} />
           <Route path='/users/:id/abilities' component={AbilitiesIndexContainer} />
-          <Route path='/users/:id/connections' component={ConnectionsContainer} />
+          <Route path='/users/:id/connections' component={ConnectionsIndexContainer} />
           <Route path='/users/:id/notes' component={NotesContainer} />
         </Route>
       </Router>

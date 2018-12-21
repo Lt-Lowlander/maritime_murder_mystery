@@ -42,6 +42,7 @@ class AbilitiesIndexContainer extends Component {
 
   render(){
     document.getElementById("abilities").className = "abilities-hud presently";
+    const skillSum = this.state.abilities.length;
     let powers = this.state.abilities.map(skill => {
       return(
         <AbilitiesIndexTile
@@ -71,7 +72,14 @@ class AbilitiesIndexContainer extends Component {
             Abilities
           </div>
         </div>
-        {powers}
+        <div>
+          <div>
+            You have these {skillSum} abilities available to you:
+          </div>
+          <div>
+            {powers}
+          </div>
+        </div>
       </div>
     )
   }

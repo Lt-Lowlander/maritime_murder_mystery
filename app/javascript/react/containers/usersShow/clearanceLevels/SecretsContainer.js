@@ -9,6 +9,8 @@ class SecretsContainer extends Component {
       position: "",
       group: "",
       name: "",
+      secret: "",
+      information: ""
     };
   }
 
@@ -27,12 +29,13 @@ class SecretsContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-
       this.setState({
         patronId: body.patron[0].id,
         position: body.patron[0].position,
         group: body.patron[0].faction_id,
         name: body.patron[0].character,
+        secret: body.patron[0].char_secret.sec_desc,
+        information: body.patron[0].char_info.info_desc
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -56,7 +59,22 @@ class SecretsContainer extends Component {
             Secret and Information
           </div>
         </div>
-I call them 'bowsers'
+        <div>
+          <div>
+            Secret
+          </div>
+          <div>
+            {this.state.secret}
+          </div>
+        </div>
+        <div>
+          <div>
+            Information
+          </div>
+          <div>
+            {this.state.information}
+          </div>
+        </div>
       </div>
     )
   }
