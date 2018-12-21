@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LetterHeadTile from '../../../components/LetterHeadTile';
 import OtherPeopleTile from '../../../components/OtherPeopleTile';
 import BeginnerTipsTile from '../../../components/BeginnerTipsTile';
 
@@ -66,12 +65,6 @@ class ConnectionsIndexContainer extends Component {
     });
     return(
       <div>
-        <LetterHeadTile
-          key={this.state.patronId}
-          position={this.state.position}
-          group={this.state.group}
-          name={this.state.name}
-          />
         <div className="page-heading">
           <div className="heading-icon">
             <i className="fas fa-users"></i>
