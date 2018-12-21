@@ -60,7 +60,7 @@ class PartyIndexContainer extends Component {
             <i className="fas fa-book-dead"></i>
           </div>
           <div className="heading-text">
-            Murder At Sea
+            Narrative
           </div>
         </div>
         {story}
