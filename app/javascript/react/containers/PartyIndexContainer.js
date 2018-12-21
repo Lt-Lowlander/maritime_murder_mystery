@@ -5,6 +5,7 @@ class PartyIndexContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      viewer: "",
       narrative: []
     }
     this.evenKeel = this.evenKeel.bind(this)
@@ -33,15 +34,18 @@ class PartyIndexContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        narrative: body
+        viewer: body.viewer,
+        narrative: body.narratives
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-      document.getElementById("party").className = "party-hud presently";
-      this.evenKeel("char-cons")
+      if (this.state.viewer === "onboard") {
+        document.getElementById("party").className = "party-hud presently";
+        this.evenKeel("char-cons")
+      }
       const lore = this.state.narrative;
       let story = lore.map(tale => {
         return(

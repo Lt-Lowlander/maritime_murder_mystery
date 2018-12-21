@@ -5,6 +5,7 @@ class RulesContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      viewer: "",
       rules: []
     }
     this.evenKeel = this.evenKeel.bind(this)
@@ -33,26 +34,29 @@ class RulesContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        rules: body
+        viewer: body.viewer,
+        rules: body.rules
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
+    if (this.state.viewer === "onboard") {
       document.getElementById("rules").className = "rules-hud presently";
       this.evenKeel("char-cons")
-      const regulations = this.state.rules;
-      let structure = regulations.map(regl => {
-        return(
-          <RulesIndexTile
-            key={regl.id}
-            id={regl.id}
-            ruleName={regl.rule_name}
-            ruleDesc={regl.rule_desc}
-          />
-        )
-      })
+    }
+    const regulations = this.state.rules;
+    let structure = regulations.map(regl => {
+      return(
+        <RulesIndexTile
+          key={regl.id}
+          id={regl.id}
+          ruleName={regl.rule_name}
+          ruleDesc={regl.rule_desc}
+        />
+      )
+    })
     return(
       <div className="rules-heading">
         <div className="page-heading">

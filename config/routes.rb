@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :party
-  resources :factions
+  resources :manifest
   resources :rules, only: [:index]
   resources :narrative, except: [:show]
   resources :users, only: [:show] do
-    resources :story, only: [:index]
+    resources :background, only: [:index]
     resources :abilities, only: [:index]
     resources :goals, only: [:index]
     resources :connections, only: [:index]

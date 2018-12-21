@@ -3,7 +3,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import PartyIndexContainer from '../containers/PartyIndexContainer';
 import ManifestContainer from '../containers/manifest/ManifestContainer';
 import RulesContainer from '../containers/RulesContainer';
-import UsersShowContainer from '../containers/usersShow/UsersShowContainer';
+import UsersStatusContainer from '../containers/usersShow/UsersStatusContainer';
+import BackgroundContainer from '../containers/usersShow/clearanceLevels/BackgroundContainer';
 import GoalsIndexContainer from '../containers/usersShow/clearanceLevels/GoalsIndexContainer';
 import SecretsContainer from '../containers/usersShow/clearanceLevels/SecretsContainer';
 import AbilitiesIndexContainer from '../containers/usersShow/clearanceLevels/AbilitiesIndexContainer';
@@ -34,10 +35,10 @@ class App extends Component {
         <Route path='/'>
           <IndexRoute component={PartyIndexContainer}/>
           <Route path='/party' component={PartyIndexContainer} />
-          <Route path='/factions' component={ManifestContainer} />
+          <Route path='/manifest' component={ManifestContainer} />
           <Route path='/rules' component={RulesContainer} />
-          <Route path='/users/:id' component={UsersShowContainer} />
-          <Route path='/users/:id/story' component={UsersShowContainer} />
+          <Route path='/users/:id' component={UsersStatusContainer} />
+          <Route path='/users/:id/background' component={BackgroundContainer} />
           <Route path='/users/:id/goals' component={GoalsIndexContainer} />
           <Route path='/users/:id/secrets' component={SecretsContainer} />
           <Route path='/users/:id/abilities' component={AbilitiesIndexContainer} />

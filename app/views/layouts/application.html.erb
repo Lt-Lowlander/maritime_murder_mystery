@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mur Maid</title>
+  <title>Murder at Sea</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
 
@@ -14,6 +14,7 @@
 <body>
 
   <nav id="navbar" class="top-bar">
+    <%- if current_user -%>
     <ul class="primary-section">
       <li class="event-hud">
         <ul class="mystery-console">
@@ -23,39 +24,42 @@
           <li id="rules" class="rules-hud">
             <a href="/rules"><i class="far fa-compass"></i></a>
           </li>
-          <li id="manifest" class="factions-hud">
-            <a href="/factions"><i class="fas fa-address-book"></i></a>
+          <li id="manifest" class="manifest-hud">
+            <a href="/manifest"><i class="fas fa-address-book"></i></a>
           </li>
         </ul>
-        <div class="user-icon">
-          <%- if current_user -%>
-          <div>
-            <button onclick="charConSwitch()">
-              <i class="fas fa-user-circle"></i>
-            </button>
-            <script type="text/javascript">
-              function charConSwitch() {
-                var change = document.getElementById("char-cons");
-                if (change.style.display === "none"){
-                  change.style.display = "flex";
-                } else {
-                  change.style.display = "none";
-                }
+        <div class="user-controls">
+          <button id=char-hud-down class="user-hud-toggle" onclick="charConSwitch()">
+            <i class="fas fa-caret-down"></i>
+          </button>
+          <button id=char-hud-up class="user-hud-toggle" onclick="charConSwitch()">
+            <i class="fas fa-caret-up"></i>
+          </button>
+          <script type="text/javascript">
+            function charConSwitch() {
+              var downer = document.getElementById("char-hud-down");
+              var uppity = document.getElementById("char-hud-up");
+              var change = document.getElementById("char-cons");
+              if (change.style.display === "none"){
+                change.style.display = "flex";
+                uppity.style.display = "flex";
+                downer.style.display = "none";
+              } else {
+                change.style.display = "none";
+                uppity.style.display = "none";
+                downer.style.display = "flex";
               }
-            </script>
+            }
+          </script>
+          <div id="status" class="user-status">
+            <a href="/users/<%=current_user.id%>"><i class="fas fa-user-circle"></i></a>
           </div>
-          <%- else -%>
-          <div>
-            <%= link_to '<span class="veiled">|</span><i class="fas fa-ship"></i>'.html_safe, user_session_path %>
-          </div>
-          <%- end -%>
         </div>
       </li>
       <li id="char-cons" class="char-ops">
-        <%- if current_user -%>
         <ul class="character-console">
           <li id="story" class="origin-story-hud">
-            <a href="/users/<%=current_user.id%>/story"><i class="fas fa-scroll"></i></a>
+            <a href="/users/<%=current_user.id%>/background"><i class="fas fa-scroll"></i></a>
           </li>
           <li id="goals" class="goals-hud">
             <a href="/users/<%=current_user.id%>/goals"><i class="fas fa-tasks"></i></a>
@@ -75,6 +79,10 @@
         </ul>
         <div class="sign-out">
           <%= link_to '<span class="veiled">|</span><i class="fas fa-sign-out-alt"></i>'.html_safe, destroy_user_session_path, method: :delete %>
+        </div>
+        <%- else -%>
+        <div class="sign-in">
+          <%= link_to '<span class="veiled">|</span><i class="fas fa-ship"></i>'.html_safe, user_session_path %>
         </div>
         <%- end -%>
       </li>

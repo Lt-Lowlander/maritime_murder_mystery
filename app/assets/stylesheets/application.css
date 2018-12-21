@@ -17,7 +17,7 @@
  */
  .veiled { opacity: 0.0; }
 
-.hidden { display: none; }
+#char-hud-up { display: none; }
 
 .presently { background-color:rgba(0, 255, 0, 1); }
 
@@ -29,8 +29,11 @@
                      order: 1;}
     .party-hud { order: 1; }
     .rules-hud { order: 2; }
-    .factions-hud { order: 3; }
-  .user-icon { order: 2;}
+    .manifest-hud { order: 3; }
+  .user-controls { order: 2;
+                   display: flex;}
+    .user-hud-toggle { order: 1; }
+    .user-status { order: 2; }
 .char-ops { display: flex; }
   .character-console { display: flex;
                        order: 1; }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import LetterHeadTile from '../../components/LetterHeadTile';
 
-class UsersShowContainer extends Component {
+class BackgroundContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,40 +29,18 @@ class UsersShowContainer extends Component {
         viewer: body.viewer,
         clearance: body.clearance,
         patronData: body.patron[0]
-      })
+      });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
     document.getElementById("story").className = "origin-story-hud presently";
-    const viewerClearance = this.state.clearance
-    const letterHead =
-      <LetterHeadTile
-        key={this.state.patronData.id}
-        position={this.state.patronData.position}
-        group={this.state.patronData.faction_id}
-        name={this.state.patronData.character}
-      />
-
-    const personalizedLetterHead =
-      <div>
-        {letterHead}
-        <div className="page-heading">
-          ({this.state.patronData.attendee})
-        </div>
-        <div>
-          {this.state.patronData.title}
-          <br/>
-          {this.state.patronData.tagline}
-        </div>
-      </div>
-
+    const viewerClearance = this.state.clearance;
     let permittedDisplay;
     if (viewerClearance == "visitor") {
       permittedDisplay =
         <div>
-        {letterHead}
           <div>
             {this.state.patronData.title}
             <br/>
@@ -73,12 +50,11 @@ class UsersShowContainer extends Component {
     }else if (viewerClearance == "member") {
       permittedDisplay =
       <div>
-        {personalizedLetterHead}
+        hi cat
       </div>
     } else if (viewerClearance == "character") {
       permittedDisplay =
       <div>
-        {letterHead}
         <div>
           <div className="page-heading">
             <div className="heading-icon">
@@ -102,4 +78,4 @@ class UsersShowContainer extends Component {
   }
 }
 
-export default UsersShowContainer;
+export default BackgroundContainer;
