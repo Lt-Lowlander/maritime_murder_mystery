@@ -64,16 +64,16 @@ class AbilitiesIndexContainer extends Component {
     if (this.state.clearance === "character") {
       output =
         <div>
-          <div className="page-heading">
+          <div className="page-heading marg1">
             <div className="heading-icon">
               <i className="fas fa-wind"></i>
             </div>
-            <div className="heading-text cursive">
+            <div className="heading-text limey">
               Abilities
             </div>
           </div>
           <div>
-            <div className="deco">
+            <div className="marg1 deco">
               You have these {skillSum} abilities available to you:
             </div>
             <div>

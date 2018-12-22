@@ -53,7 +53,7 @@ class NotesContainer extends Component {
             <div className="heading-icon">
               <i className="fas fa-search"></i>
             </div>
-            <div className="heading-text cursive">
+            <div className="heading-text limey">
               Notes
             </div>
           </div>

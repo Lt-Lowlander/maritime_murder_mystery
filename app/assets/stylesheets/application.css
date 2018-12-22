@@ -15,9 +15,20 @@
  *= require foundation_and_overrides
 
  */
+.clear-back { background-color: transparent; }
+
  .veiled { opacity: 0.0; }
 
 #char-hud-up { display: none; }
+
+body {
+  background-image: url("./libertania.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #c0c0c0;
+}
 
 .presently { background-color:rgba(0, 255, 0, 1); }
 
@@ -26,14 +37,24 @@
 }
 .event-hud { display: flex; }
   .mystery-console { display: flex;
-                     order: 1;}
-    .party-hud { order: 1; }
-    .rules-hud { order: 2; }
-    .manifest-hud { order: 3; }
+                     order: 1;
+                     font-size: 2rem;}
+    .party-hud { order: 1;
+                 margin-left: 1rem;
+    }
+    .rules-hud { order: 2;
+                 margin-left: 1rem;
+    }
+    .manifest-hud { order: 3;
+                    margin-left: 1rem;
+    }
   .user-controls { order: 2;
+                   font-size: 2rem;
+                   margin-left: 8rem;
                    display: flex;}
     .user-hud-toggle { order: 1; }
-    .user-status { order: 2; }
+    .user-status { order: 2;
+                  margin-left: 1rem;}
 .char-ops { display: flex; }
   .character-console { display: flex;
                        order: 1; }

@@ -91,13 +91,11 @@ class UsersStatusContainer extends Component {
       <div>
         {letterHead}
         <div>
-          <div className="page-heading">
-            <div className="heading-text">
-              Character Status
-            </div>
+          <div className="heading-text marg1 limey">
+            Character Status
           </div>
         </div>
-        <div>
+        <div className="deco marg2">
           Here you can keep track of your progress
           <ul>
             <li>

@@ -7,16 +7,18 @@ const LetterHeadTile = (props) => {
     rank = <div>{props.position}</div>
   }
   return(
-    <div className="visitor-tile page-heading">
+    <div className="visitor-tile limey marg1">
       {rank}
-      <div>
+      <div className="char-cast">
         -=
         <span>  </span>
         <GroupSymbolTile
         group={props.group}
         />
-        <span>  </span>
-        {props.name} =-
+        <span> </span>
+        <span>
+          {props.name} =-
+        </span>
         '(some floral decoration beflanking the name)'
       </div>
     </div>

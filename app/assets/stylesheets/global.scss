@@ -8,21 +8,30 @@
     }
     .heading-text {
       order: 2;
+      margin-left: 1rem;
     }
 
 //////////////////////////////////////
-.cursive {
-  font-family: 'Lobster', cursive;
+.limey {
+  font-family: 'Limelight', cursive;
+  font-weight: bold;
+  color: #c0c0c0;
 }
-.blocky {
-  font-family: 'Carter One', cursive;
-}
+
 .deco {
   font-family: 'Poiret One', cursive;
+  font-weight: bolder;
+  color: #c0c0c0;
 }
 //////////////////////////////////////
 
+.marg1 {
+  margin: 1rem;
+}
 
+.marg2 {
+  margin: 0 1rem 1rem 1rem;
+}
 
 // Here's the css for the Deco Border styling
 .contain {

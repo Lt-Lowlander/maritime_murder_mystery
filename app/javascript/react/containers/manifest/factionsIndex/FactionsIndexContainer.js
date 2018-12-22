@@ -34,7 +34,7 @@ class FactionsIndexContainer extends Component {
     })
 
     return(
-      <div>
+      <div className="limey marg1">
         <GroupSymbolTile
           group={this.props.id}
         />
