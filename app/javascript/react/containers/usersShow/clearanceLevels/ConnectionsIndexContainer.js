@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import OtherPeopleTile from '../../../components/OtherPeopleTile';
 import BeginnerTipsTile from '../../../components/BeginnerTipsTile';
+import GumshoeTile from '../../../components/GumshoeTile';
 
 class ConnectionsIndexContainer extends Component {
   constructor(props) {
@@ -35,16 +36,21 @@ class ConnectionsIndexContainer extends Component {
         position: body.patron[0].position,
         group: body.patron[0].faction_id,
         name: body.patron[0].character,
-        otherPeople: body.patron[0].other_people,
-        beginnerTips: body.patron[0].beginner_tips
+        clearance: body.clearance
       })
+      if (body.clearance === "character") {
+        this.setState({
+          otherPeople: body.patron[0].other_people,
+          beginnerTips: body.patron[0].beginner_tips
+        })
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
     document.getElementById("connections").className = "connections-hud presently";
-    let allies = this.state.otherPeople.map(ally => {
+    const allies = this.state.otherPeople.map(ally => {
       return(
         <OtherPeopleTile
         key={ally.id}
@@ -54,7 +60,7 @@ class ConnectionsIndexContainer extends Component {
         />
       )
     });
-    let nudges = this.state.beginnerTips.map(nudge => {
+    const nudges = this.state.beginnerTips.map(nudge => {
       return(
         <BeginnerTipsTile
         key={nudge.id}
@@ -63,27 +69,46 @@ class ConnectionsIndexContainer extends Component {
         />
       )
     });
+    let output;
+    if (this.state.clearance === "character") {
+      output=
+        <div>
+          <div className="page-heading">
+            <div className="heading-icon">
+              <i className="fas fa-users"></i>
+            </div>
+            <div className="heading-text cursive">
+              Other People & Beginner Tips
+            </div>
+          </div>
+          <div>
+            <div className="cursive">
+              Other People
+            </div>
+            <div>
+              {allies}
+            </div>
+          </div>
+          <div>
+            <div className="cursive">
+              Beginner Tips
+            </div>
+            <div className="deco">
+              <div>
+                If you've not played a Freeform Games murder mystery game before, then we suggest you start by doing the following:
+              </div>
+              <ul>
+                {nudges}
+              </ul>
+            </div>
+          </div>
+        </div>
+    } else if (this.state.clearance === "gumshoe") {
+      output= <GumshoeTile/>
+    }
     return(
       <div>
-        <div className="page-heading">
-          <div className="heading-icon">
-            <i className="fas fa-users"></i>
-          </div>
-          <div className="heading-text">
-            Other People & Beginner Tips
-          </div>
-        </div>
-        <div>
-          {allies}
-        </div>
-        <div>
-          <div>
-            If you've not played a Freeform Games murder mystery game before, then we suggest you start by doing the following:
-          </div>
-          <ul>
-            {nudges}
-          </ul>
-        </div>
+        {output}
       </div>
     )
   }

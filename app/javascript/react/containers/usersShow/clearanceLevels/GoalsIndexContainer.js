@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoalsIndexTile from '../../../components/GoalsIndexTile';
+import GumshoeTile from '../../../components/GumshoeTile';
 
 class GoalsIndexContainer extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class GoalsIndexContainer extends Component {
       position: "",
       group: "",
       name: "",
+      clearance: "",
       goals: []
     };
   }
@@ -29,12 +31,15 @@ class GoalsIndexContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
+        clearance: body.clearance,
         patronId: body.patron[0].id,
         position: body.patron[0].position,
         group: body.patron[0].faction_id,
         name: body.patron[0].character,
-        goals: body.patron[0].goals
       })
+      if (body.clearance === "character") {
+        this.setState({ goals: body.patron[0].goals })
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -49,20 +54,29 @@ class GoalsIndexContainer extends Component {
           task={aim.goal_objective}
           desc={aim.goal_details}
           checked={aim.goal_achieved}
-        />
+          />
       )
     })
-    return(
+    let output;
+    if (this.state.clearance === "character") {
+      output=
       <div>
         <div className="page-heading">
           <div className="heading-icon">
             <i className="fas fa-tasks"></i>
           </div>
-          <div className="heading-text">
+          <div className="heading-text cursive">
             Goals
           </div>
         </div>
         {objectives}
+      </div>
+    } else if (this.state.clearance === "gumshoe") {
+      output = <GumshoeTile/>
+    }
+    return(
+      <div>
+        {output}
       </div>
     )
   }

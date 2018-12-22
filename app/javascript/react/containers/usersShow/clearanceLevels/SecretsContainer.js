@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GumshoeTile from '../../../components/GumshoeTile';
 
 class SecretsContainer extends Component {
   constructor(props) {
@@ -30,14 +31,18 @@ class SecretsContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
+        clearance: body.clearance,
         patronId: body.patron[0].id,
         position: body.patron[0].position,
         group: body.patron[0].faction_id,
-        name: body.patron[0].character,
-        secret: body.patron[0].char_secret.sec_desc,
-        information: body.patron[0].char_info.info_desc,
-        clearance: body.clearance
+        name: body.patron[0].character
       })
+      if (body.clearance === "character") {
+        this.setState({
+          secret: body.patron[0].char_secret.sec_desc,
+          information: body.patron[0].char_info.info_desc
+        })
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -45,41 +50,37 @@ class SecretsContainer extends Component {
   render(){
     document.getElementById("secrets").className = "secrets-hud presently";
     let output;
-      if (this.state.clearance !== "character") {
-        document.getElementById("navbar").style.display = "none";
-        output =
-        <div>
-          Nice try, Private Eye!
-        </div>
-      } else {
+      if (this.state.clearance === "character") {
         output=
-          <div>
-            <div className="page-heading">
-              <div className="heading-icon">
-                <i className="far fa-eye"></i>
-              </div>
-              <div className="heading-text cursive">
-                SECRET and INFORMATION
-              </div>
+        <div>
+          <div className="page-heading">
+            <div className="heading-icon">
+              <i className="far fa-eye"></i>
             </div>
-            <div>
-              <div className="blocky">
-                Secret
-              </div>
-              <div className="deco">
-                {this.state.secret}
-              </div>
-            </div>
-            <div>
-              <div className="blocky">
-                Information
-              </div>
-              <div className="deco">
-                {this.state.information}
-              </div>
+            <div className="heading-text cursive">
+              Secret and Information
             </div>
           </div>
-
+          <div>
+            <div className="blocky">
+              Secret
+            </div>
+            <div className="deco">
+              {this.state.secret}
+            </div>
+          </div>
+          <div>
+            <div className="blocky">
+              Information
+            </div>
+            <div className="deco">
+              {this.state.information}
+            </div>
+          </div>
+        </div>
+      } else if (this.state.clearance === "gumshoe") {
+        output =
+          <GumshoeTile/>
       }
     return(
       <div>

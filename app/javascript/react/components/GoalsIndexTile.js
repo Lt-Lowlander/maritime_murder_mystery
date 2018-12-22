@@ -13,10 +13,10 @@ const GoalsIndexTile = (props) => {
       {indicator}
       </div>
       <div className="goal-title-and-desc">
-        <div className="goal-name">
+        <div className="goal-name blocky">
         {props.task}:
         </div>
-        <div className="goal-desc">
+        <div className="goal-desc deco">
         {props.desc}
         </div>
       </div>

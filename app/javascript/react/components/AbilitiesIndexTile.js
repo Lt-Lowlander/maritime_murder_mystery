@@ -8,14 +8,14 @@ const AbilitiesIndexTile = (props) => {
   return(
     <div className="ability-index-tile">
       <div className="ability-title-and-desc">
-        <div className="ability-name">
+        <div className="ability-name blocky">
         {props.name}:
         </div>
-        <div className="ability-desc">
+        <div className="ability-desc deco">
         {props.desc}
         </div>
       </div>
-      <div>
+      <div className="deco">
         number of uses:
         <span> </span>
         {powerTotal}

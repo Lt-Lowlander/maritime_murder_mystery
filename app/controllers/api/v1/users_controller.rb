@@ -33,7 +33,7 @@ class Api::V1::UsersController < ApiController
     if !current_user
       guest_payload = {
         viewer: "overboard",
-        clearance: "visitor",
+        clearance: "gumshoe",
         patron: User.where(id: params[:id])
       }
       render json: guest_payload, include: ["faction"]
@@ -41,7 +41,7 @@ class Api::V1::UsersController < ApiController
       member_payload = {
         viewer: "onboard",
         player: current_user.id,
-        clearance: "player",
+        clearance: "gumshoe",
         patron: User.where(id: params[:id])
       }
       render json: member_payload, include: ["faction", "player_notes"]

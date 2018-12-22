@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GumshoeTile from '../../../components/GumshoeTile';
 
 class BackgroundContainer extends Component {
   constructor(props) {
@@ -6,7 +7,7 @@ class BackgroundContainer extends Component {
     this.state = {
       viewer: "",
       clearance: "",
-      patronData: {}
+      background: ""
     };
   }
 
@@ -27,52 +28,41 @@ class BackgroundContainer extends Component {
     .then(body => {
       this.setState({
         viewer: body.viewer,
-        clearance: body.clearance,
-        patronData: body.patron[0]
+        clearance: body.clearance
       });
+      if (body.clearance === "character") {
+        this.setState({ background: body.patron[0].char_story.char_story })
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
     document.getElementById("story").className = "origin-story-hud presently";
-    const viewerClearance = this.state.clearance;
-    let permittedDisplay;
-    if (viewerClearance == "visitor") {
-      permittedDisplay =
-        <div>
-          <div>
-            {this.state.patronData.title}
-            <br/>
-            {this.state.patronData.tagline}
-          </div>
-        </div>
-    }else if (viewerClearance == "member") {
-      permittedDisplay =
-      <div>
-        hi cat
-      </div>
-    } else if (viewerClearance == "character") {
-      permittedDisplay =
+    let output;
+    if (this.state.clearance === "character") {
+      output =
       <div>
         <div>
           <div className="page-heading">
             <div className="heading-icon">
               <i className="fas fa-scroll"></i>
             </div>
-            <div className="heading-text">
+            <div className="heading-text cursive">
               Character Background
             </div>
           </div>
         </div>
-        <div>
-          {this.state.patronData.char_story.char_story}
+        <div className="deco">
+          {this.state.background}
         </div>
       </div>
+    } else if (this.state.clearance === "gumshoe") {
+      output = <GumshoeTile/>
     }
     return(
       <div>
-        {permittedDisplay}
+        {output}
       </div>
     )
   }

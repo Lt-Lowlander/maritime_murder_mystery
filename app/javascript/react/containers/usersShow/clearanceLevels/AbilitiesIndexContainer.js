@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AbilitiesIndexTile from '../../../components/AbilitiesIndexTile';
+import GumshoeTile from '../../../components/GumshoeTile';
 
 class AbilitiesIndexContainer extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class AbilitiesIndexContainer extends Component {
       position: "",
       group: "",
       name: "",
+      clearance: "",
       abilities: []
     };
   }
@@ -33,8 +35,11 @@ class AbilitiesIndexContainer extends Component {
         position: body.patron[0].position,
         group: body.patron[0].faction_id,
         name: body.patron[0].character,
-        abilities: body.patron[0].abilities
+        clearance: body.clearance
       })
+      if (body.clearance === "character") {
+        this.setState({ abilities: body.patron[0].abilities })
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -55,24 +60,33 @@ class AbilitiesIndexContainer extends Component {
         />
       )
     })
+    let output;
+    if (this.state.clearance === "character") {
+      output =
+        <div>
+          <div className="page-heading">
+            <div className="heading-icon">
+              <i className="fas fa-wind"></i>
+            </div>
+            <div className="heading-text cursive">
+              Abilities
+            </div>
+          </div>
+          <div>
+            <div className="deco">
+              You have these {skillSum} abilities available to you:
+            </div>
+            <div>
+              {powers}
+            </div>
+          </div>
+        </div>
+    } else if (this.state.clearance === "gumshoe") {
+      output = <GumshoeTile/>
+    }
     return(
       <div>
-        <div className="page-heading">
-          <div className="heading-icon">
-            <i className="fas fa-wind"></i>
-          </div>
-          <div className="heading-text">
-            Abilities
-          </div>
-        </div>
-        <div>
-          <div>
-            You have these {skillSum} abilities available to you:
-          </div>
-          <div>
-            {powers}
-          </div>
-        </div>
+        {output}
       </div>
     )
   }
