@@ -42,23 +42,23 @@ class PartyIndexContainer extends Component {
   }
 
   render(){
-      if (this.state.viewer === "onboard") {
-        document.getElementById("party").className = "party-hud presently";
-        this.evenKeel("char-cons")
-      }
-      const lore = this.state.narrative;
-      let story = lore.map(tale => {
-        return(
-          <NarrativeIndexTile
-            key={tale.id}
-            id={tale.id}
-            heading={tale.heading}
-            content={tale.content}
-          />
-        )
-      })
-    return(
-      <div className="">
+    let doorman;
+    const lore = this.state.narrative;
+    let story = lore.map(tale => {
+      return(
+        <NarrativeIndexTile
+          key={tale.id}
+          id={tale.id}
+          heading={tale.heading}
+          content={tale.content}
+        />
+      )
+    })
+    if (this.state.viewer === "onboard") {
+      document.getElementById("party").className = "party-hud presently";
+      this.evenKeel("char-cons")
+      doorman =
+      <div>
         <div className="page-heading">
           <div className="heading-icon">
             <i className="fas fa-book-dead"></i>
@@ -68,6 +68,16 @@ class PartyIndexContainer extends Component {
           </div>
         </div>
         {story}
+      </div>
+    } else {
+      doorman=
+      <div className="visitor-message cursive">
+        Anchors Aweigh!
+      </div>
+    }
+    return(
+      <div className="">
+        {doorman}
       </div>
     )
   }
