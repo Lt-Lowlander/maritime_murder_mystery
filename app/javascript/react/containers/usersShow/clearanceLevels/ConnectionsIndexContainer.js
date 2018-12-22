@@ -73,24 +73,24 @@ class ConnectionsIndexContainer extends Component {
     if (this.state.clearance === "character") {
       output=
         <div>
-          <div className="page-heading">
+          <div className="page-heading marg1">
             <div className="heading-icon">
               <i className="fas fa-users"></i>
             </div>
-            <div className="heading-text cursive">
+            <div className="heading-text limey">
               Other People & Beginner Tips
             </div>
           </div>
-          <div>
-            <div className="cursive">
+          <div className="marg1">
+            <div className="limey">
               Other People
             </div>
             <div>
               {allies}
             </div>
           </div>
-          <div>
-            <div className="cursive">
+          <div className="marg1">
+            <div className="limey">
               Beginner Tips
             </div>
             <div className="deco">

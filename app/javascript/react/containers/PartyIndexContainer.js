@@ -58,12 +58,12 @@ class PartyIndexContainer extends Component {
       document.getElementById("party").className = "party-hud presently";
       this.evenKeel("char-cons")
       doorman =
-      <div>
-        <div className="page-heading">
+      <div className="mystery-structure">
+        <div className="page-heading marg1">
           <div className="heading-icon">
             <i className="fas fa-book-dead"></i>
           </div>
-          <div className="heading-text">
+          <div className="heading-text limey">
             Narrative
           </div>
         </div>
@@ -71,7 +71,7 @@ class PartyIndexContainer extends Component {
       </div>
     } else {
       doorman=
-      <div className="visitor-message cursive">
+      <div className="visitor-message limey">
         Anchors Aweigh!
       </div>
     }

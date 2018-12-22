@@ -62,8 +62,8 @@ class ManifestContainer extends Component {
       )
     })
     return(
-      <div>
-        <div className="page-heading">
+      <div className="mystery-structure">
+        <div className="page-heading limey marg1">
           <i className="fas fa-address-book"></i> Manifest
         </div>
         {factions}

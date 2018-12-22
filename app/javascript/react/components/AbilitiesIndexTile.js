@@ -6,9 +6,9 @@ const AbilitiesIndexTile = (props) => {
   const powerLeft = <i className="fas fa-dot-circle"></i>;
 
   return(
-    <div className="ability-index-tile">
+    <div className="ability-index-tile marg1">
       <div className="ability-title-and-desc">
-        <div className="ability-name blocky">
+        <div className="ability-name limey">
         {props.name}:
         </div>
         <div className="ability-desc deco">

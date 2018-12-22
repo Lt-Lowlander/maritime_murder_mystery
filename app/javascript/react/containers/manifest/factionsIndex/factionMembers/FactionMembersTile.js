@@ -9,14 +9,14 @@ const FactionMembersTile = (props) => {
     rank =
     <span>, {props.position}</span>
   }
-  if (props.viewer == "familiar") {
+  if (props.viewer == "onboard") {
     sleuth =
       <span>({props.attendee})</span>
   }
   return(
-    <li className="cast-member-tile">
+    <li className="cast-member-tile deco marg2">
       <div>
-        <Link to={`/users/${props.id}`}>
+        <Link className="char-cast" to={`/users/${props.id}`}>
           {props.character}
         </Link>
         <span>{rank}</span>

@@ -58,9 +58,14 @@ class RulesContainer extends Component {
       )
     })
     return(
-      <div className="rules-heading">
-        <div className="page-heading">
-          <i className="far fa-compass"></i> Rules
+      <div className="mystery-structure">
+        <div className="page-heading marg1">
+          <div className="heading-icon">
+            <i className="far fa-compass"></i>
+          </div>
+          <div className="heading-text limey">
+            Rules
+          </div>
         </div>
         <div>
           {structure}

@@ -8,12 +8,12 @@ const GoalsIndexTile = (props) => {
     indicator = <i className="fas fa-check"></i>
   }
   return(
-    <div className="goal-index-tile">
+    <div className="goal-index-tile marg2">
       <div className="completion-status">
       {indicator}
       </div>
       <div className="goal-title-and-desc">
-        <div className="goal-name blocky">
+        <div className="goal-name limey">
         {props.task}:
         </div>
         <div className="goal-desc deco">

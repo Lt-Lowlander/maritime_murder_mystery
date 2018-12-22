@@ -43,17 +43,17 @@ class BackgroundContainer extends Component {
     if (this.state.clearance === "character") {
       output =
       <div>
-        <div>
+        <div className="marg1">
           <div className="page-heading">
             <div className="heading-icon">
               <i className="fas fa-scroll"></i>
             </div>
-            <div className="heading-text cursive">
+            <div className="heading-text limey">
               Character Background
             </div>
           </div>
         </div>
-        <div className="deco">
+        <div className="deco marg2">
           {this.state.background}
         </div>
       </div>
