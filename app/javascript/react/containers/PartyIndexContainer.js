@@ -78,7 +78,7 @@ class PartyIndexContainer extends Component {
       </div>
     }
     return(
-      <div>
+      <div className="page-body">
         {doorman}
       </div>
     )
