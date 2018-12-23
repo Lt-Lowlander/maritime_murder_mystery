@@ -2,7 +2,7 @@ import React from 'react';
 
 const OtherPeopleTile = (props) => {
   return(
-    <div className="other-people-tile marg1">
+    <div className="other-people-tile">
       <div className="other-people-heading char-cast">
         {props.person}
       </div>

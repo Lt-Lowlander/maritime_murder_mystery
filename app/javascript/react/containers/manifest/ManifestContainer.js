@@ -42,7 +42,7 @@ class ManifestContainer extends Component {
   }
 
   render(){
-
+    document.getElementById("sea-dragon").className = "libertania";
     if (this.state.viewer === "onboard") {
       document.getElementById("manifest").className = "manifest-hud presently";
       this.evenKeel("char-cons")
@@ -63,10 +63,17 @@ class ManifestContainer extends Component {
     })
     return(
       <div className="mystery-structure">
-        <div className="page-heading limey marg1">
-          <i className="fas fa-address-book"></i> Manifest
+        <div className="page-heading marg1">
+          <div className="heading-icon">
+            <i className="far fa-compass"></i>
+          </div>
+          <div className="heading-text limey">
+            Manifest
+          </div>
         </div>
-        {factions}
+        <div>
+          {factions}
+        </div>
       </div>
     )
   }

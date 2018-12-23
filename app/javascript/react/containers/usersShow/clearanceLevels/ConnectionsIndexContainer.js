@@ -82,7 +82,7 @@ class ConnectionsIndexContainer extends Component {
             </div>
           </div>
           <div className="marg1">
-            <div className="limey">
+            <div className="other-people-subcat limey">
               Other People
             </div>
             <div>
@@ -90,14 +90,14 @@ class ConnectionsIndexContainer extends Component {
             </div>
           </div>
           <div className="marg1">
-            <div className="limey">
+            <div className="beginner-tips-subcat limey">
               Beginner Tips
             </div>
             <div className="deco">
               <div>
                 If you've not played a Freeform Games murder mystery game before, then we suggest you start by doing the following:
               </div>
-              <ul>
+              <ul className="tips-list">
                 {nudges}
               </ul>
             </div>

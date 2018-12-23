@@ -12,7 +12,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div id="sea-dragon">
   <nav id="navbar" class="top-bar">
     <%- if current_user -%>
     <ul class="primary-section">
@@ -84,7 +84,7 @@
         <script type="text/javascript">
           document.getElementById("navbar").className = "clear-back";
         </script>
-        <div class="sign-in">
+        <div id="ship-log" class="sign-in">
           <%= link_to '<span class="veiled">|</span><i class="fas fa-ship"></i>'.html_safe, user_session_path %>
         </div>
         <%- end -%>
@@ -105,12 +105,13 @@
   <%= javascript_include_tag 'application' %>
 
   <%- if Rails.env.development? || Rails.env.test? -%>
-    <%= javascript_tag do %>
-      window.railsEnv = '<%= Rails.env %>'
-    <%- end -%>
+  <%= javascript_tag do %>
+  window.railsEnv = '<%= Rails.env %>'
+  <%- end -%>
   <%- end -%>
   <%= javascript_pack_tag 'application' %>
 
   <%= yield :extra_footer %>
+</div>
 </body>
 </html>

@@ -17,27 +17,29 @@
  */
 .clear-back { background-color: transparent; }
 
+.sign-in {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 3rem;
+  font-size: 4rem;
+}
+.site-text{ color: #c0c0c0; }
+
  .veiled { opacity: 0.0; }
 
 #char-hud-up { display: none; }
 
-body {
-  background-image: url("./libertania.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  color: #c0c0c0;
-}
-
 .presently { background-color:rgba(0, 255, 0, 1); }
 
+.top-bar { display: flex; }
 .top-bar li {
   list-style: none;
 }
 .event-hud { display: flex; }
   .mystery-console { display: flex;
                      order: 1;
+                     margin-left: 0;
                      font-size: 2rem;}
     .party-hud { order: 1;
                  margin-left: 1rem;
