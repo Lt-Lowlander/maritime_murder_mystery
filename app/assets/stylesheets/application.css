@@ -17,21 +17,21 @@
  */
 .clear-back { background-color: transparent; }
 
+.sign-in {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 3rem;
+  font-size: 4rem;
+}
+
  .veiled { opacity: 0.0; }
 
 #char-hud-up { display: none; }
 
-body {
-  background-image: url("./libertania.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  color: #c0c0c0;
-}
-
 .presently { background-color:rgba(0, 255, 0, 1); }
 
+.top-bar { display: flex; }
 .top-bar li {
   list-style: none;
 }
