@@ -1,6 +1,9 @@
 .goal-index-tile { display: flex; }
-  .completion-status { order: 1; }
-  .goal-title-and-desc { order: 2; }
+  .completion-status { order: 1;
+                       color: #c0c0c0;
+                       font-size: 1.4rem;}
+  .goal-title-and-desc { order: 2;
+                         margin-left: 0.4rem; }
 
 .goal-name {
   font-weight: bold;

@@ -24,6 +24,7 @@
   margin-top: 3rem;
   font-size: 4rem;
 }
+.site-text{ color: #c0c0c0; }
 
  .veiled { opacity: 0.0; }
 
@@ -38,6 +39,7 @@
 .event-hud { display: flex; }
   .mystery-console { display: flex;
                      order: 1;
+                     margin-left: 0;
                      font-size: 2rem;}
     .party-hud { order: 1;
                  margin-left: 1rem;

@@ -42,6 +42,7 @@ class RulesContainer extends Component {
   }
 
   render(){
+    document.getElementById("sea-dragon").className = "libertania";
     if (this.state.viewer === "onboard") {
       document.getElementById("rules").className = "rules-hud presently";
       this.evenKeel("char-cons")

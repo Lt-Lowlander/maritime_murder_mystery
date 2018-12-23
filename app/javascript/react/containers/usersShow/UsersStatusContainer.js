@@ -44,7 +44,8 @@ class UsersStatusContainer extends Component {
   }
 
   render(){
-    if (this.state.viewer === "onboard") {
+    document.getElementById("sea-dragon").className = "";
+    if (this.state.clearance === "character") {
       document.getElementById("status").className = "user-status presently";
       this.evenKeel("char-cons")
     }
@@ -71,21 +72,19 @@ class UsersStatusContainer extends Component {
       </div>
 
     let permittedDisplay;
-    if (viewerClearance == "visitor") {
+    if (viewerClearance == "gumshoe") {
       permittedDisplay =
         <div>
         {letterHead}
-          <div>
+          <div className="deco marg1">
             {this.state.patronData.title}
             <br/>
             {this.state.patronData.tagline}
           </div>
+          <div className="limey marg1">
+            Notes:
+          </div>
         </div>
-    }else if (viewerClearance == "player") {
-      permittedDisplay =
-      <div>
-        {personalizedLetterHead}
-      </div>
     } else if (viewerClearance == "character") {
       permittedDisplay =
       <div>

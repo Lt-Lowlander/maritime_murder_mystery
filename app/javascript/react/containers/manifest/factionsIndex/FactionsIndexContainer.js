@@ -35,12 +35,14 @@ class FactionsIndexContainer extends Component {
 
     return(
       <div className="limey marg1">
-        <GroupSymbolTile
-          group={this.props.id}
-        />
-        <span>  </span>
-        {this.props.group}
-        <ul>
+        <div className="faction-headings">
+          {this.props.group}
+          <span>  </span>
+          <GroupSymbolTile
+            group={this.props.id}
+            />
+        </div>
+        <ul className="ledgerlist">
           {constituents}
         </ul>
       </div>

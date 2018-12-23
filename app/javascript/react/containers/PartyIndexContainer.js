@@ -55,6 +55,7 @@ class PartyIndexContainer extends Component {
       )
     })
     if (this.state.viewer === "onboard") {
+      document.getElementById("sea-dragon").className = "libertania";
       document.getElementById("party").className = "party-hud presently";
       this.evenKeel("char-cons")
       doorman =
@@ -72,11 +73,12 @@ class PartyIndexContainer extends Component {
     } else {
       doorman=
       <div className="visitor-message limey">
-        Anchors Aweigh!
+        <div>Anchors</div>
+        <div>Aweigh!</div>
       </div>
     }
     return(
-      <div className="">
+      <div>
         {doorman}
       </div>
     )

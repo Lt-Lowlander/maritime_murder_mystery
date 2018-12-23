@@ -1,4 +1,4 @@
-body {
+.libertania {
   background-image: url("./libertania.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,9 +11,11 @@ body {
   display: flex;
   text-align: center;
   justify-content: center;
+  font-size: 1.6rem;
 }
     .heading-icon {
       order: 1;
+      color: #c0c0c0;
     }
     .heading-text {
       order: 2;
@@ -29,7 +31,7 @@ body {
 
 .deco {
   font-family: 'Poiret One', cursive;
-  font-weight: bolder;
+  font-weight: bold;
   color: #c0c0c0;
 }
 //////////////////////////////////////
