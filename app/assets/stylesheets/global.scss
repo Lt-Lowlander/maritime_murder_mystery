@@ -4,6 +4,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  height: 100vh;
+  width: 100% !important;
+  overflow: scroll;
   color: #c0c0c0;
 }
 
@@ -20,6 +23,7 @@
     .heading-text {
       order: 2;
       margin-left: 1rem;
+      display: inline;
     }
 
 //////////////////////////////////////
@@ -80,3 +84,8 @@
             width: -webkit-calc(100% - 8px);
             width: calc(100% - 8px);
         }
+
+.bounder {
+  border-style: solid;
+  border-color: green;
+}
