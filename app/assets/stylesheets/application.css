@@ -15,6 +15,11 @@
  *= require foundation_and_overrides
 
  */
+#sea-dragon {
+  position: fixed;
+  height: 100%;
+}
+
 .clear-back { background-color: transparent; }
 
 .sign-in {
@@ -43,16 +48,17 @@ button {
   }
   @-webkit-keyframes glow {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a67d2b, 0 0 40px #a67d2b, 0 0 50px #a67d2b;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a67d2b, 0 0 40px #a67d2b;
     }
     to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #d4af37, 0 0 40px #d4af37, 0 0 50px #d4af37;
+      text-shadow: 0 0 10px #fff, 0 0 20px #d4af37, 0 0 30px #d4af37, 0 0 40px #d4af37;
     }
  }
 
 .chart-bar { display: flex;
-           text-align: center;
-           justify-content: center; }
+             text-align: center;
+             justify-content: center;
+             margin-top: 1.2;}
 .columnar-stacking { flex-direction: column; }
   .event-hud { order: 1;
                display: flex; }
