@@ -9,6 +9,17 @@
   color: #c0c0c0;
 }
 
+.sleuthing {
+  background-image: url("./sleuthing.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100% !important;
+  color: #c0c0c0;
+}
+
 .page-body { flex-direction: column;
             max-height: 96vh;
              overflow: scroll;}

@@ -45,6 +45,7 @@ class AbilitiesIndexContainer extends Component {
   }
 
   render(){
+    document.getElementById("sea-dragon").className = "sleuthing";
     document.getElementById("abilities").className = "abilities-hud presently";
     const skillSum = this.state.abilities.length;
     let powers = this.state.abilities.map(skill => {

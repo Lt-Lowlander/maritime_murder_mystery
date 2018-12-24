@@ -44,6 +44,7 @@ class NotesContainer extends Component {
   }
 
   render(){
+    document.getElementById("sea-dragon").className = "sleuthing";
     document.getElementById("notes").className = "notes-hud presently";
     let doorman;
     if (this.state.clearance === "character") {

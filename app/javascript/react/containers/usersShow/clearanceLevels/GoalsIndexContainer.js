@@ -45,6 +45,7 @@ class GoalsIndexContainer extends Component {
   }
 
   render(){
+    document.getElementById("sea-dragon").className = "sleuthing";
     document.getElementById("goals").className = "goals-hud presently";
     let objectives = this.state.goals.map( aim => {
       return(

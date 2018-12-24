@@ -44,7 +44,7 @@ class UsersStatusContainer extends Component {
   }
 
   render(){
-    document.getElementById("sea-dragon").className = "";
+    document.getElementById("sea-dragon").className = "sleuthing";
     if (this.state.clearance === "character") {
       document.getElementById("status").className = "user-status presently";
       this.evenKeel("char-cons")
