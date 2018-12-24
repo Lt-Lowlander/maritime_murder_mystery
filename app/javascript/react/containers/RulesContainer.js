@@ -58,7 +58,7 @@ class RulesContainer extends Component {
         />
       )
     })
-    return(
+    const doorman =
       <div className="mystery-structure">
         <div className="page-heading marg1">
           <div className="heading-icon">
@@ -71,6 +71,11 @@ class RulesContainer extends Component {
         <div>
           {structure}
         </div>
+      </div>
+    return(
+      <div className="page-body">
+        <div className="page-content">{doorman}</div>
+        <div className="booster-thresh">you can do it!</div>
       </div>
     )
   }

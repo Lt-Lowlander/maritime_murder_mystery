@@ -45,9 +45,9 @@ class NotesContainer extends Component {
 
   render(){
     document.getElementById("notes").className = "notes-hud presently";
-    let output;
+    let doorman;
     if (this.state.clearance === "character") {
-      output =
+      doorman =
         <div>
           <div className="page-heading">
             <div className="heading-icon">
@@ -57,15 +57,14 @@ class NotesContainer extends Component {
               Notes
             </div>
           </div>
-          chellooo
         </div>
     } else if (this.state.clearance === "gumshoe") {
-      output = <GumshoeTile/>
+      doorman = <GumshoeTile/>
     }
-
     return(
-      <div>
-        {output}
+      <div className="page-body">
+        <div className="page-content">{doorman}</div>
+        <div className="booster-thresh">you can do it!</div>
       </div>
     )
   }

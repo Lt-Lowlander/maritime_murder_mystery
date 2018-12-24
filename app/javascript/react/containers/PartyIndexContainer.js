@@ -79,7 +79,8 @@ class PartyIndexContainer extends Component {
     }
     return(
       <div className="page-body">
-        {doorman}
+        <div className="page-content">{doorman}</div>
+        <div className="booster-thresh">you can do it!</div>
       </div>
     )
   }

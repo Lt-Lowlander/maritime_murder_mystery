@@ -15,13 +15,21 @@
  *= require foundation_and_overrides
 
  */
+#sea-dragon {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
 .clear-back { background-color: transparent; }
 
 .sign-in {
-  display: flex;
+  position: fixed;
   text-align: center;
   justify-content: center;
-  margin-top: 3rem;
+  left: 50%;
+transform: translate(-60%, 0);
+  margin-top: 10rem;
   font-size: 4rem;
 }
 .site-text{ color: #c0c0c0; }
@@ -43,18 +51,21 @@ button {
   }
   @-webkit-keyframes glow {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a67d2b, 0 0 40px #a67d2b, 0 0 50px #a67d2b;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a67d2b, 0 0 40px #a67d2b;
     }
     to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #d4af37, 0 0 40px #d4af37, 0 0 50px #d4af37;
+      text-shadow: 0 0 10px #fff, 0 0 20px #d4af37, 0 0 30px #d4af37, 0 0 40px #d4af37;
     }
  }
 
 .chart-bar { display: flex;
-           text-align: center;
-           justify-content: center; }
+             text-align: center;
+             justify-content: center;
+             margin-top: 1.2;}
 .columnar-stacking { flex-direction: column; }
-  .event-hud { order: 1;
+  .padding-topper{ order: 1;
+                   opacity: 0; }
+  .event-hud { order: 2;
                display: flex; }
     .mystery-console { display: flex;
                        order: 1;
@@ -62,11 +73,9 @@ button {
                        font-size: 2rem;}
       .party-hud { order: 1; }
       .rules-hud { order: 2;
-                   margin-left: 1rem;
-      }
+                   margin-left: 1rem; }
       .manifest-hud { order: 3;
-                      margin-left: 1rem;
-      }
+                      margin-left: 1rem; }
     .user-controls { order: 2;
                      font-size: 2rem;
                      margin-left: 7rem;
@@ -74,22 +83,25 @@ button {
       .user-hud-toggle { order: 1; }
       .user-status { order: 2;
                     margin-left: 1rem;}
-  .bar-divider {order: 2;}
-  .char-ops { order: 3
+  .bar-divider { order: 3;}
+  .char-ops { order: 4;
               flex-direction: row;
               font-size: 1.4rem; }
     .character-console { display: flex;
                          order: 1; }
       .origin-story-hud { order: 1; }
       .goals-hud { order: 2;
-                          margin-left: 0.6rem; }
+                   margin-left: 0.6rem; }
       .secrets-hud { order: 3;
-                          margin-left: 0.6rem; }
+                     margin-left: 0.6rem; }
       .abilities-hud { order: 4;
-                          margin-left: 0.6rem; }
+                       margin-left: 0.6rem; }
       .connections-hud { order: 5;
-                          margin-left: 0.6rem; }
+                         margin-left: 0.6rem; }
       .notes-hud { order: 6;
-                          margin-left: 0.6rem; }
+                   margin-left: 0.6rem; }
       .sign-out { order: 7;
                   margin-left: 4.6rem; }
+  .padding-bottomton {order: 5;
+                      font-size: 0.6rem;
+                      opacity: 0; }

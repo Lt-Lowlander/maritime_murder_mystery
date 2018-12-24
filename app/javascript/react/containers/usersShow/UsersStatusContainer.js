@@ -71,9 +71,9 @@ class UsersStatusContainer extends Component {
         </div>
       </div>
 
-    let permittedDisplay;
+    let doorman;
     if (viewerClearance == "gumshoe") {
-      permittedDisplay =
+      doorman =
         <div>
         {letterHead}
           <div className="deco marg1">
@@ -86,7 +86,7 @@ class UsersStatusContainer extends Component {
           </div>
         </div>
     } else if (viewerClearance == "character") {
-      permittedDisplay =
+      doorman =
       <div>
         {letterHead}
         <div>
@@ -117,8 +117,9 @@ class UsersStatusContainer extends Component {
       </div>
     }
     return(
-      <div>
-        {permittedDisplay}
+      <div className="page-body">
+        <div className="page-content">{doorman}</div>
+        <div className="booster-thresh">you can do it!</div>
       </div>
     )
   }
