@@ -48,6 +48,7 @@ class SecretsContainer extends Component {
   }
 
   render(){
+    document.getElementById("sea-dragon").className = "sleuthing";
     document.getElementById("secrets").className = "secrets-hud presently";
     let doorman;
       if (this.state.clearance === "character") {

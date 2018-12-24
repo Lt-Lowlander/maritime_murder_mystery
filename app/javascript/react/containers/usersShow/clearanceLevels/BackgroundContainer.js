@@ -38,6 +38,7 @@ class BackgroundContainer extends Component {
   }
 
   render(){
+    document.getElementById("sea-dragon").className = "sleuthing";
     document.getElementById("story").className = "origin-story-hud presently";
     let doorman;
     if (this.state.clearance === "character") {

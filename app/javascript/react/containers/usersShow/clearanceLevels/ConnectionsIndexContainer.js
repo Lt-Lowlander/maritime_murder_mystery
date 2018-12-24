@@ -49,6 +49,7 @@ class ConnectionsIndexContainer extends Component {
   }
 
   render(){
+    document.getElementById("sea-dragon").className = "sleuthing";
     document.getElementById("connections").className = "connections-hud presently";
     const allies = this.state.otherPeople.map(ally => {
       return(
