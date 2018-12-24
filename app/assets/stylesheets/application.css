@@ -18,15 +18,18 @@
 #sea-dragon {
   position: fixed;
   height: 100%;
+  width: 100%;
 }
 
 .clear-back { background-color: transparent; }
 
 .sign-in {
-  display: flex;
+  position: fixed;
   text-align: center;
   justify-content: center;
-  margin-top: 3rem;
+  left: 50%;
+transform: translate(-60%, 0);
+  margin-top: 10rem;
   font-size: 4rem;
 }
 .site-text{ color: #c0c0c0; }
@@ -100,4 +103,5 @@ button {
       .sign-out { order: 7;
                   margin-left: 4.6rem; }
   .padding-bottomton {order: 5;
+                      font-size: 0.6rem;
                       opacity: 0; }

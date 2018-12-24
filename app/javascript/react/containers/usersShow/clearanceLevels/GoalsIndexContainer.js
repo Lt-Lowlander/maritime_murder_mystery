@@ -57,9 +57,9 @@ class GoalsIndexContainer extends Component {
           />
       )
     })
-    let output;
+    let doorman;
     if (this.state.clearance === "character") {
-      output=
+      doorman=
       <div>
         <div className="page-heading marg1">
           <div className="heading-icon">
@@ -75,8 +75,9 @@ class GoalsIndexContainer extends Component {
       output = <GumshoeTile/>
     }
     return(
-      <div>
-        {output}
+      <div className="page-body">
+        <div className="page-content">{doorman}</div>
+        <div className="booster-thresh">you can do it!</div>
       </div>
     )
   }

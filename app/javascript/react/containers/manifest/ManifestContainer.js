@@ -61,7 +61,7 @@ class ManifestContainer extends Component {
         />
       )
     })
-    return(
+    const doorman =
       <div className="mystery-structure">
         <div className="page-heading marg1">
           <div className="heading-icon">
@@ -74,6 +74,11 @@ class ManifestContainer extends Component {
         <div>
           {factions}
         </div>
+      </div>
+    return(
+      <div className="page-body">
+        <div className="page-content">{doorman}</div>
+        <div className="booster-thresh">you can do it!</div>
       </div>
     )
   }

@@ -39,9 +39,9 @@ class BackgroundContainer extends Component {
 
   render(){
     document.getElementById("story").className = "origin-story-hud presently";
-    let output;
+    let doorman;
     if (this.state.clearance === "character") {
-      output =
+      doorman =
       <div>
         <div className="marg1">
           <div className="page-heading">
@@ -58,11 +58,12 @@ class BackgroundContainer extends Component {
         </div>
       </div>
     } else if (this.state.clearance === "gumshoe") {
-      output = <GumshoeTile/>
+      doorman = <GumshoeTile/>
     }
     return(
-      <div>
-        {output}
+      <div className="page-body">
+        <div className="page-content">{doorman}</div>
+        <div className="booster-thresh">you can do it!</div>
       </div>
     )
   }
