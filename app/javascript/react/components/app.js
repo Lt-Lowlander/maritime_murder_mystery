@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import Konami from './KonamiCode';
 import PartyIndexContainer from '../containers/PartyIndexContainer';
 import ManifestContainer from '../containers/manifest/ManifestContainer';
 import RulesContainer from '../containers/RulesContainer';
@@ -19,6 +20,9 @@ class App extends Component {
   }
 
   render(){
+
+    // This gets called any time a user enters the Konami Code
+    const redHerring = new Konami('https://media3.giphy.com/media/obQ0Q8dav3L5S/giphy.gif?cid=3640f6095c20848b3678616851db1e25');
 
     // This is the flash message that appears when someone logs in or out
     $(function(){
