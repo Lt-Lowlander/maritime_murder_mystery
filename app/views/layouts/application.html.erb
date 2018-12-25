@@ -110,7 +110,9 @@
     </div>
     <%- else -%>
       <div id="ship-log" class="sign-in">
-        <%= link_to '<div class="sign-in"><span class="veiled">|</span><i class="fas fa-ship"></i></div>'.html_safe, user_session_path %>
+        <%= link_to user_session_path, class: "btn btn-default" do %>
+          <div class="boat-icon"><span class="veiled">|</span><i class="fas fa-ship"></i></div>
+        <% end %>
       </div>
 
       <div id="flash-messages">

@@ -22,7 +22,7 @@ class App extends Component {
   render(){
 
     // This gets called any time a user enters the Konami Code
-    const redHerring = new Konami('https://media3.giphy.com/media/obQ0Q8dav3L5S/giphy.gif?cid=3640f6095c20848b3678616851db1e25');
+    const redHerring = new Konami('https://i.imgur.com/AaER77x.gifv');
 
     // This is the flash message that appears when someone logs in or out
     $(function(){

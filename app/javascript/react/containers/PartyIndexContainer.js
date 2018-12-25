@@ -72,13 +72,13 @@ class PartyIndexContainer extends Component {
       </div>
     } else {
       doorman=
-      <div className="visitor-message limey">
-        <div>Anchors</div>
-        <div>Aweigh!</div>
+      <div className="limey">
+        <div className="message-top">Anchors</div>
+        <div className="message-bottom">Aweigh!</div>
       </div>
     }
     return(
-      <div className="page-body">
+      <div className="page-body visitor-message">
         <div className="page-content">{doorman}</div>
         <div className="booster-thresh">you can do it!</div>
       </div>
