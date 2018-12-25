@@ -6,24 +6,24 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div class="grid-x grid-margin-x align-spaced">
   <div class="cell small-10 medium-6 large-4">
-    <div class="field">
+    <div class="field deco">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
-    <div class="field">
+    <div class="field deco">
       <%= f.label :password %><br />
       <%= f.password_field :password, autocomplete: "current-password" %>
     </div>
 
     <% if devise_mapping.rememberable? -%>
-      <div class="field">
+      <div class="field veiled">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>
     <% end -%>
 
-    <div class="actions">
+    <div class="actions limey">
       <%= f.submit "Log in" %>
     </div>
   </div>

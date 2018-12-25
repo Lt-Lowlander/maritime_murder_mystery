@@ -79,4 +79,5 @@ font-family: 'Berkshire Swash', cursive;
 <i class="fab fa-d-and-d"></i>
 <i class="fas fa-satellite-dish"></i>
 
-https://media3.giphy.com/media/obQ0Q8dav3L5S/giphy.gif?cid=3640f6095c20848b3678616851db1e25
+
+https://stackoverflow.com/questions/22252472/change-svg-color

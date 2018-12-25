@@ -58,6 +58,7 @@ class PartyIndexContainer extends Component {
       document.getElementById("sea-dragon").className = "libertania";
       document.getElementById("party").className = "party-hud presently";
       this.evenKeel("char-cons")
+      this.evenKeel("divider")
       doorman =
       <div className="mystery-structure">
         <div className="page-heading marg1">
@@ -72,15 +73,15 @@ class PartyIndexContainer extends Component {
       </div>
     } else {
       doorman=
-      <div className="visitor-message limey">
-        <div>Anchors</div>
-        <div>Aweigh!</div>
+      <div className="limey">
+        <div className="message-top">Anchors</div>
+        <div className="message-bottom">Aweigh!</div>
       </div>
     }
     return(
       <div className="page-body">
         <div className="page-content">{doorman}</div>
-        <div className="booster-thresh">you can do it!</div>
+        <div className="booster-thresh veiled">you can do it!</div>
       </div>
     )
   }

@@ -16,7 +16,7 @@
     <div id="sea-dragon">
       <nav id="navbar" class="chart-bar">
         <div class="columnar-stacking">
-          <div class="padding-topper">you can do it!</div>
+          <div class="padding-topper veiled">you can do it!</div>
           <div class="event-hud">
             <div class="mystery-console">
               <div id="party" class="party-hud">
@@ -41,12 +41,15 @@
                   var downer = document.getElementById("char-hud-down");
                   var uppity = document.getElementById("char-hud-up");
                   var change = document.getElementById("char-cons");
+                  var decor = document.getElementById("divider");
                   if (change.style.display === "none"){
                     change.style.display = "flex";
+                    decor.style.display = "block";
                     uppity.style.display = "flex";
                     downer.style.display = "none";
                   } else {
                     change.style.display = "none";
+                    decor.style.display = "none";
                     uppity.style.display = "none";
                     downer.style.display = "flex";
                   }
@@ -57,7 +60,7 @@
               </div>
             </div>
           </div>
-          <div class="bar-divider"></div>
+          <img id="divider" class="bar-divider" src="/deco-divider.svg"></img>
           <div id="char-cons" class="char-ops">
             <div class="character-console">
               <div id="story" class="origin-story-hud">
@@ -83,7 +86,7 @@
               </div>
             </div>
           </div>
-          <div class="padding-bottomton">you can do it!</div>
+          <div class="padding-bottomton veiled">you can do it!</div>
         </div>
       </nav>
 
@@ -110,7 +113,9 @@
     </div>
     <%- else -%>
       <div id="ship-log" class="sign-in">
-        <%= link_to '<div class="sign-in"><span class="veiled">|</span><i class="fas fa-ship"></i></div>'.html_safe, user_session_path %>
+        <%= link_to user_session_path, class: "btn btn-default" do %>
+          <div class="boat-icon"><span class="veiled">|</span><i class="fas fa-ship"></i></div>
+        <% end %>
       </div>
 
       <div id="flash-messages">

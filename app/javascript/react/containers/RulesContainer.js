@@ -46,6 +46,7 @@ class RulesContainer extends Component {
     if (this.state.viewer === "onboard") {
       document.getElementById("rules").className = "rules-hud presently";
       this.evenKeel("char-cons")
+      this.evenKeel("divider")
     }
     const regulations = this.state.rules;
     let structure = regulations.map(regl => {
