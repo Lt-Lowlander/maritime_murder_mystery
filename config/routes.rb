@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :party
   resources :manifest
+  resources :red_herring, only: [:index]
   resources :rules, only: [:index]
   resources :narrative, except: [:show]
   resources :users, only: [:show] do

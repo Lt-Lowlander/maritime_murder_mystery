@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Konami from './KonamiCode';
+import RedHerringTile from './RedHerringTile';
 import PartyIndexContainer from '../containers/PartyIndexContainer';
 import ManifestContainer from '../containers/manifest/ManifestContainer';
 import RulesContainer from '../containers/RulesContainer';
@@ -20,9 +21,11 @@ class App extends Component {
   }
 
   render(){
-
     // This gets called any time a user enters the Konami Code
-    const redHerring = new Konami('https://i.imgur.com/AaER77x.gifv');
+    let secretOp = () => {
+      window.location = '/red_herring';
+    };
+    const redHerring = new Konami(secretOp);
 
     // This is the flash message that appears when someone logs in or out
     $(function(){
@@ -40,6 +43,7 @@ class App extends Component {
           <IndexRoute component={PartyIndexContainer}/>
           <Route path='/party' component={PartyIndexContainer} />
           <Route path='/manifest' component={ManifestContainer} />
+          <Route path='/red_herring' component={RedHerringTile} />
           <Route path='/rules' component={RulesContainer} />
           <Route path='/users/:id' component={UsersStatusContainer} />
           <Route path='/users/:id/background' component={BackgroundContainer} />

@@ -73,7 +73,7 @@ class PartyIndexContainer extends Component {
       </div>
     } else {
       doorman=
-      <div className="limey">
+      <div className="visitor-message limey">
         <div className="message-top">Anchors</div>
         <div className="message-bottom">Aweigh!</div>
       </div>
