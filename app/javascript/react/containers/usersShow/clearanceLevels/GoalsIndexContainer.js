@@ -13,6 +13,29 @@ class GoalsIndexContainer extends Component {
       clearance: "",
       goals: []
     };
+    this.updateGoals=this.updateGoals.bind(this)
+  }
+
+  updateGoals(payload, traverse){
+    fetch(traverse, {
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      method: 'PATCH',
+      body: JSON.stringify(payload)
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ goals: body })
+    })
   }
 
   componentDidMount(){
@@ -55,6 +78,8 @@ class GoalsIndexContainer extends Component {
           task={aim.goal_objective}
           desc={aim.goal_details}
           checked={aim.goal_achieved}
+          patronId={this.state.patronId}
+          update={this.updateGoals}
           />
       )
     })

@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   resources :red_herring, only: [:index]
   resources :rules, only: [:index]
   resources :narrative, except: [:show]
-  resources :users, only: [:show] do
+  resources :users do
     resources :background, only: [:index]
     resources :abilities, only: [:index]
-    resources :goals, only: [:index]
+    resources :goals 
     resources :connections, only: [:index]
     resources :secrets, only: [:index]
     resources :notes, only: [:index]
@@ -22,7 +22,9 @@ Rails.application.routes.draw do
       resources :narratives
       resources :rules
       resources :factions
-      resources :users
+      resources :users do
+        resources :goals
+      end
     end
   end
 end
