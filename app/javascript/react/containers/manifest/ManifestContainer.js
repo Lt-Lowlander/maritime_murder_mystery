@@ -46,6 +46,7 @@ class ManifestContainer extends Component {
     if (this.state.viewer === "onboard") {
       document.getElementById("manifest").className = "manifest-hud presently";
       this.evenKeel("char-cons")
+      this.evenKeel("divider")
     }
     let socialGroups = this.state.manifest;
     let factions = socialGroups.map( clique => {

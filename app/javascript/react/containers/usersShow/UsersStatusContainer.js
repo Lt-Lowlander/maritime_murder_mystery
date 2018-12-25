@@ -48,6 +48,7 @@ class UsersStatusContainer extends Component {
     if (this.state.clearance === "character") {
       document.getElementById("status").className = "user-status presently";
       this.evenKeel("char-cons")
+      this.evenKeel("divider")
     }
     const viewerClearance = this.state.clearance
     const letterHead =

@@ -65,8 +65,7 @@ button {
              justify-content: center;
              margin-top: 1.2;}
 .columnar-stacking { flex-direction: column; }
-  .padding-topper{ order: 1;
-                   opacity: 0; }
+  .padding-topper{ order: 1; }
   .event-hud { order: 2;
                display: flex; }
     .mystery-console { display: flex;
@@ -85,7 +84,15 @@ button {
       .user-hud-toggle { order: 1; }
       .user-status { order: 2;
                     margin-left: 1rem;}
-  .bar-divider { order: 3;}
+  .bar-divider { order: 3;
+                 filter: invert(83%) sepia(12%) saturate(0%) hue-rotate(228deg) brightness(93%) contrast(86%);
+                 width: 75%;
+                 height: auto;
+                 display: block;
+                 margin:auto;
+                 margin-top: 0.8rem;
+                 margin-bottom: 0.4rem;
+                }
   .char-ops { order: 4;
               flex-direction: row;
               font-size: 1.4rem; }
@@ -105,5 +112,4 @@ button {
       .sign-out { order: 7;
                   margin-left: 4.6rem; }
   .padding-bottomton {order: 5;
-                      font-size: 0.6rem;
-                      opacity: 0; }
+                      font-size: 0.6rem;}
