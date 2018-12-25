@@ -1,27 +1,62 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const GoalsIndexTile = (props) => {
-  let indicator;
-  if (props.checked == 0) {
-    indicator = <i className="far fa-square"></i>
-  } else if (props.checked == 1) {
-    indicator = <i className="fas fa-check"></i>
+class GoalsIndexTile extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    }
+    this.progress=this.progress.bind(this)
+    this.regress=this.regress.bind(this)
   }
-  return(
-    <div className="goal-index-tile marg2">
-      <div className="completion-status">
-      {indicator}
-      </div>
-      <div className="goal-title-and-desc">
-        <div className="goal-name limey">
-        {props.task}:
+
+  progress(event){
+    event.preventDefault();
+    const progPayload = {
+      id: this.props.id,
+      goal_achieved: 1
+    }
+    const traverse = `/api/v1/users/${this.props.patronId}/goals/${this.props.id}.json`
+    this.props.update(progPayload, traverse);
+  }
+  regress(event){
+    event.preventDefault();
+    const progPayload = {
+      id: this.props.id,
+      goal_achieved: 0
+    }
+    const traverse = `/api/v1/users/${this.props.patronId}/goals/${this.props.id}.json`
+    this.props.update(progPayload, traverse);
+  }
+
+  render(){
+    let indicator;
+    let taskStatus;
+    let descStatus;
+    if (this.props.checked == 0) {
+      indicator = <i className="far fa-square" onClick={this.progress}></i>
+      taskStatus = <div>{this.props.task}:</div>
+      descStatus = <div>{this.props.desc}</div>
+    } else if (this.props.checked == 1) {
+      indicator = <i className="fas fa-check" onClick={this.regress}></i>
+      taskStatus = <div className="mission-accomplice">{this.props.task}:</div>
+      descStatus = <div className="mission-accomplice">{this.props.desc}</div>
+    }
+    return(
+      <div className="goal-index-tile marg2">
+        <div className="completion-status">
+        {indicator}
         </div>
-        <div className="goal-desc deco">
-        {props.desc}
+        <div className="goal-title-and-desc">
+          <div className="goal-name limey">
+          {taskStatus}
+          </div>
+          <div className="goal-desc deco">
+          {descStatus}
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default GoalsIndexTile;
