@@ -7,9 +7,6 @@ class GoalsIndexContainer extends Component {
     super(props);
     this.state = {
       patronId: "",
-      position: "",
-      group: "",
-      name: "",
       clearance: "",
       goals: []
     };
@@ -39,7 +36,7 @@ class GoalsIndexContainer extends Component {
   }
 
   componentDidMount(){
-    fetch(`/api/v1/users/${this.props.params.id}`, {
+    fetch(`/api/v1/users/${this.props.params.id}/goals`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -55,14 +52,8 @@ class GoalsIndexContainer extends Component {
     .then(body => {
       this.setState({
         clearance: body.clearance,
-        patronId: body.patron[0].id,
-        position: body.patron[0].position,
-        group: body.patron[0].faction_id,
-        name: body.patron[0].character,
+        goals: body.goals
       })
-      if (body.clearance === "character") {
-        this.setState({ goals: body.patron[0].goals })
-      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -70,7 +61,8 @@ class GoalsIndexContainer extends Component {
   render(){
     document.getElementById("sea-dragon").className = "sleuthing";
     document.getElementById("goals").className = "goals-hud presently";
-    let objectives = this.state.goals.map( aim => {
+    let orderedGroup = this.state.goals.sort(function(a, b){return a.id - b.id});
+    let objectives = orderedGroup.map( aim => {
       return(
         <GoalsIndexTile
           key={aim.id}
@@ -78,7 +70,7 @@ class GoalsIndexContainer extends Component {
           task={aim.goal_objective}
           desc={aim.goal_details}
           checked={aim.goal_achieved}
-          patronId={this.state.patronId}
+          patronId={this.props.params.id}
           update={this.updateGoals}
           />
       )
@@ -98,7 +90,7 @@ class GoalsIndexContainer extends Component {
         {objectives}
       </div>
     } else if (this.state.clearance === "gumshoe") {
-      output = <GumshoeTile/>
+      doorman = <GumshoeTile/>
     }
     return(
       <div className="page-body">
