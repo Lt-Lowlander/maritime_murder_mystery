@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :background, only: [:index]
     resources :abilities, only: [:index]
-    resources :goals 
+    resources :goals
     resources :connections, only: [:index]
     resources :secrets, only: [:index]
     resources :notes, only: [:index]
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       resources :factions
       resources :users do
         resources :goals
+        resources :abilities
       end
     end
   end
