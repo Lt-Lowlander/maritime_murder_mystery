@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_15_015829) do
+ActiveRecord::Schema.define(version: 2018_12_26_055000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,6 @@ ActiveRecord::Schema.define(version: 2018_12_15_015829) do
     t.bigint "user_id", null: false
     t.string "power_name", null: false
     t.text "power_desc", null: false
-    t.integer "quant_total", null: false
-    t.integer "quant_used", default: 0, null: false
-    t.integer "quant_left", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_abilities_on_user_id"
@@ -33,6 +30,14 @@ ActiveRecord::Schema.define(version: 2018_12_15_015829) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_beginner_tips_on_user_id"
+  end
+
+  create_table "cells", force: :cascade do |t|
+    t.bigint "ability_id", null: false
+    t.integer "consumed", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ability_id"], name: "index_cells_on_ability_id"
   end
 
   create_table "char_infos", force: :cascade do |t|

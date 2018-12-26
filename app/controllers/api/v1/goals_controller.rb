@@ -4,7 +4,6 @@ class Api::V1::GoalsController < ApiController
 
   def index
     beacon = params.permit(:user_id)
-    char_goals =
     if beacon.values[0].to_i == current_user.id
       goals_payload = {
         goals: Goal.where(user_id: params[:user_id]),
