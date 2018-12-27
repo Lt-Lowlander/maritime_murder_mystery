@@ -9,7 +9,7 @@ class Api::V1::AbilitiesController < ApiController
         abilities: Ability.where(user_id: params[:user_id]),
         clearance: "character"
       }
-      render json: char_abils, include: ["cells"]
+      render json: char_abils
     else
       goals_payload = {
         abilities: [],
@@ -31,7 +31,7 @@ class Api::V1::AbilitiesController < ApiController
 
   private
   def abil_dets
-    params.permit(:id, :quant_used)
+    params.permit(:id, :quant_used, :quant_left)
   end
 
 end

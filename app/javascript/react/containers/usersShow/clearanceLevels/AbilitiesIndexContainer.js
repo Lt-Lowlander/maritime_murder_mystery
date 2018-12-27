@@ -7,8 +7,31 @@ class AbilitiesIndexContainer extends Component {
     super(props);
     this.state = {
       clearance: "",
-      abilities: []
+      abilities: [],
     };
+    this.updateAbilities=this.updateAbilities.bind(this)
+  }
+
+  updateAbilities(payload, traverse){
+    fetch(traverse, {
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      method: 'PATCH',
+      body: JSON.stringify(payload)
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ abilities: body })
+    })
   }
 
   componentDidMount(){
@@ -45,7 +68,11 @@ class AbilitiesIndexContainer extends Component {
           id={skill.id}
           name={skill.power_name}
           desc={skill.power_desc}
-          cells={skill.cells}
+          userId={this.props.params.id}
+          charges={skill.quant_total}
+          consumed={skill.quant_used}
+          remaining={skill.quant_left}
+          updateUsage={this.updateAbilities}
         />
       )
     })
