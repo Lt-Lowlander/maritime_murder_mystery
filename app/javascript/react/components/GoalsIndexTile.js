@@ -38,8 +38,8 @@ class GoalsIndexTile extends Component {
       descStatus = <div>{this.props.desc}</div>
     } else if (this.props.checked == 1) {
       indicator = <i className="fas fa-check" onClick={this.regress}></i>
-      taskStatus = <div className="mission-accomplice">{this.props.task}:</div>
-      descStatus = <div className="mission-accomplice">{this.props.desc}</div>
+      taskStatus = <div className="mission-accomplice lowlight">{this.props.task}:</div>
+      descStatus = <div className="mission-accomplice lowlight">{this.props.desc}</div>
     }
     return(
       <div className="goal-index-tile marg2">

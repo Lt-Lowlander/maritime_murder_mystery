@@ -3,9 +3,8 @@
 }
 
 .alt-tank { display: flex; }
-  .fuel-cap { order: 1; }
-  .alt-fuel { order: 2;
-              // margin-left: 1rem;
-              display: flex; }
+  .fuel-space { order: 1; }
+  .air-space { order: 2;
+               display: flex; }
 
 .power-unit { margin-left: 1rem; }
