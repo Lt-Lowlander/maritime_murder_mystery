@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       resources :users do
         resources :goals
         resources :abilities
+        resources :notes
       end
     end
   end

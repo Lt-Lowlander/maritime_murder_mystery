@@ -11,7 +11,7 @@ class Api::V1::AbilitiesController < ApiController
       }
       render json: char_abils
     else
-      goals_payload = {
+      char_abils = {
         abilities: [],
         clearance: "gumshoe"
       }

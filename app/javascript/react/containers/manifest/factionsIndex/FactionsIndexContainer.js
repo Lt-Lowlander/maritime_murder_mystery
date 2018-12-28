@@ -22,6 +22,7 @@ class FactionsIndexContainer extends Component {
         <FactionMembersTile
           key={indiv.id}
           id={indiv.id}
+          viewerId={this.props.viewerId}
           viewer={this.props.viewer}
           role={indiv.role}
           attendee={indiv.attendee}
