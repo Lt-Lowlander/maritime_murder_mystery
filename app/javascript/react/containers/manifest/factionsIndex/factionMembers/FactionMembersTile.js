@@ -10,8 +10,13 @@ const FactionMembersTile = (props) => {
     <span>, {props.position}</span>
   }
   if (props.viewer == "onboard") {
-    sleuth =
-      <span>({props.attendee})</span>
+    if (props.viewerId === props.id) {
+      sleuth =
+        <span>(you)</span>
+    } else {
+      sleuth =
+        <span>({props.attendee})</span>
+    }
   }
   return(
     <li className="cast-member-tile deco marg2">

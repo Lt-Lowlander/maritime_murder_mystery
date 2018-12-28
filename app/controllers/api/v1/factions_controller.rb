@@ -5,6 +5,7 @@ class Api::V1::FactionsController < ApiController
   def index
     if current_user
       fac_payload = {
+        viewer_id: current_user.id,
         viewer: "onboard",
         factions: Faction.all.order(id: :asc)
       }

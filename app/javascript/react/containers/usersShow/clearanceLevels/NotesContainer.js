@@ -5,17 +5,15 @@ class NotesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      patronId: "",
-      position: "",
-      group: "",
-      name: "",
       clearance: "",
       notes: []
     };
   }
 
+  
+
   componentDidMount(){
-    fetch(`/api/v1/users/${this.props.params.id}`, {
+    fetch(`/api/v1/users/${this.props.params.id}/notes`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -30,15 +28,9 @@ class NotesContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        patronId: body.patron[0].id,
-        position: body.patron[0].position,
-        group: body.patron[0].faction_id,
         clearance: body.clearance,
-        name: body.patron[0].character,
+        notes: body.notes
       })
-      if (body.clearance === "character") {
-        this.setState({ notes: body.patron[0].player_notes })
-      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }

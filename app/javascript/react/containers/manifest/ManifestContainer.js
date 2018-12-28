@@ -6,6 +6,7 @@ class ManifestContainer extends Component {
     super(props)
     this.state = {
       viewer: "",
+      viewerId: "",
       manifest: []
     }
     this.evenKeel = this.evenKeel.bind(this)
@@ -35,7 +36,8 @@ class ManifestContainer extends Component {
     .then(body => {
       this.setState({
         manifest: body.factions,
-        viewer: body.viewer
+        viewer: body.viewer,
+        viewerId: body.viewer_id
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -54,6 +56,7 @@ class ManifestContainer extends Component {
         <FactionsIndexContainer
           key={clique.id}
           id={clique.id}
+          viewerId={this.state.viewerId}
           viewer={this.state.viewer}
           group={clique.fac_name}
           sign={clique.fac_sign}
