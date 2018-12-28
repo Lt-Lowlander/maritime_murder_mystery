@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 let NotesListTile = (props) => {
   return(
     <li>
-      hi cat
+      <div>{props.contents}</div>
     </li>
   )
 }

@@ -1,0 +1,7 @@
+.list-and-entry { flex-direction: column; }
+    .list-of-notes { order: 1; }
+    .notes-entry-form { order: 2;
+                        width: 100%; }
+        .writing-rectangle { float: left; }
+        .send-clicker { float: left;
+                        margin-left: 1rem;}
