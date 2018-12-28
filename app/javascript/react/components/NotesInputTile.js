@@ -6,8 +6,8 @@ const NotesInputTile = (props) => {
       <input
         name={props.name}
         type='text'
-        value={props.content}
-        onChange={props.handleChange}
+        value={props.contents}
+        onChange={props.changing}
       />
     </label>
   );
