@@ -60,8 +60,9 @@ class AbilitiesIndexContainer extends Component {
   render(){
     document.getElementById("sea-dragon").className = "sleuthing";
     document.getElementById("abilities").className = "abilities-hud presently";
+    const orderedPowers = this.state.abilities.sort(function(a, b){return a.id - b.id});
     const skillSum = this.state.abilities.length;
-    let powers = this.state.abilities.map(skill => {
+    let powers = orderedPowers.map(skill => {
       return(
         <AbilitiesIndexComponent
           key={skill.id}

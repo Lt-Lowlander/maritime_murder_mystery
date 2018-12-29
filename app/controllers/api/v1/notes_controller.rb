@@ -29,8 +29,9 @@ class Api::V1::NotesController < ApiController
     end
   end
 
+
   def create
-    note = PlayerNote.new(clue_params)
+    note = PlayerNote.new(clues_dets)
     if note.save
         notes = PlayerNote.where(user_id: params[:user_id])
       render json: notes
@@ -40,10 +41,18 @@ class Api::V1::NotesController < ApiController
     end
   end
 
-private
-def clue_params
-  params.permit(:note_contents, :subject_id, :note, :user_id)
-end
 
+
+  private
+  def clue_params
+    params.permit(:note_contents, :subject_id, :user_id)
+  end
+
+  def clues_dets
+    beacon = params.permit(:user_id)
+    spec_num = beacon.values[0].to_i
+    r = User.find_by(id: spec_num).attributes.slice('character')
+    clue_params.merge(subject_char: r.values[0])
+  end
 
 end

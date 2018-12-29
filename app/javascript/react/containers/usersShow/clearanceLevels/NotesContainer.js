@@ -72,6 +72,7 @@ class NotesContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
+debugger
       this.setState({
         clearance: body.clearance,
         notes: body.notes,
@@ -107,21 +108,25 @@ class NotesContainer extends Component {
               Notes
             </div>
           </div>
+          <div className="sub-heading deco">
+            Keep track of your clues, leads, and suspicions here
+          </div>
           <div className="list-and-entry marg1">
             <ul className="list-of-notes deco">
               {notesList}
             </ul>
             <div className="notes-entry-form deco">
-              <form onSubmit={this.handlePost}>
-                <label className="writing-rectangle">
+              <form onSubmit={this.handlePost} className="">
+                <div className="lbldv">
+                  <label className="writing-rectangle"></label>
                   <input
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
                     />
-                </label>
+                </div>
                 <div className="send-clicker">
-                  <input type="submit" value="Submit"/>
+                  <input type="submit" value="Add Info"/>
                 </div>
               </form>
             </div>

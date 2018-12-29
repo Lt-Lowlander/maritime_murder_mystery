@@ -2,8 +2,11 @@
   font-weight: bold;
 }
 
-.alt-tank { display: flex; }
-  .fuel-space { order: 1; }
+.alt-tank { margin-top: 0.4rem;
+  display: flex;
+            font-size: 1.4rem;}
+  .fuel-space { order: 1;
+              font-size: 1rem;}
   .air-space { order: 2;
                display: flex; }
 
