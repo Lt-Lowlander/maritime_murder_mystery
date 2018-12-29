@@ -25,7 +25,8 @@ class NotesContainer extends Component {
     event.preventDefault()
     const cluesPayload={
       note_contents: this.state.value,
-      subject_id: this.state.inspector
+      subject_id: this.props.params.id,
+      author_id: this.state.inspector
     }
     const traverse = `/api/v1/users/${this.props.params.id}/notes`
     const request = 'POST'
@@ -52,7 +53,7 @@ class NotesContainer extends Component {
     .then(body => {
       this.setState({
         notes: body,
-        value: '',
+        value: ''
       })
     })
   }
@@ -90,9 +91,12 @@ class NotesContainer extends Component {
         <NotesListTile
           key={entry.id}
           id={entry.id}
+          author={entry.author_id}
+          player={this.state.inspector}
           contents={entry.note_contents}
-          personOfInterest={entry.subject_id}
-          />
+          pOfIntId={entry.subject_id}
+          pOfIntName={entry.subject_char}
+        />
       )
     })
 
@@ -107,24 +111,18 @@ class NotesContainer extends Component {
               Notes
             </div>
           </div>
+          <div className="sub-heading deco">
+            Keep track of your clues, leads, and suspicions here
+          </div>
           <div className="list-and-entry marg1">
             <ul className="list-of-notes deco">
               {notesList}
             </ul>
-            <div className="notes-entry-form deco">
-              <form onSubmit={this.handlePost}>
-                <label className="writing-rectangle">
-                  <input
-                    type="text"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    />
-                </label>
-                <div className="send-clicker">
-                  <input type="submit" value="Submit"/>
-                </div>
-              </form>
-            </div>
+            <NotesInputTile
+              value={this.state.value}
+              handleChange={this.handleChange}
+              handlePost={this.handlePost}
+              />
           </div>
         </div>
     } else if (this.state.clearance === "gumshoe") {

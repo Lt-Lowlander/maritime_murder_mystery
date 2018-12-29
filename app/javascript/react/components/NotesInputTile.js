@@ -2,14 +2,21 @@ import React from 'react';
 
 const NotesInputTile = (props) => {
   return (
-    <label htmlFor={props.name}>{props.label}
-      <input
-        name={props.name}
-        type='text'
-        value={props.contents}
-        onChange={props.changing}
-      />
-    </label>
+    <div className="notes-entry-form deco">
+      <form onSubmit={props.handlePost} className="">
+        <div className="lbldv">
+          <label className="writing-rectangle"></label>
+          <input
+            type="text"
+            value={props.value}
+            onChange={props.handleChange}
+            />
+        </div>
+        <div className="send-clicker">
+          <input type="submit" value="Add Info"/>
+        </div>
+      </form>
+    </div>
   );
 }
 

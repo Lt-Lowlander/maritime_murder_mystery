@@ -68,7 +68,7 @@
   margin: 0 1rem 1rem 1rem;
 }
 
-// Use Lowlight for accomplished goals, and spent power cells 
+// Use Lowlight for accomplished goals, and spent power cells
 .lowlight {
     color: #3c3c3c;
 }
@@ -109,6 +109,26 @@
             width: -webkit-calc(100% - 8px);
             width: calc(100% - 8px);
         }
+
+.potentially {
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 0.6s ease-in-out infinite alternate;
+    -moz-animation: glow 0.6s ease-in-out infinite alternate;
+    animation: glow 0.6s ease-in-out infinite alternate;
+  }
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #a67d2b, 0 0 20px #a67d2b, 0 0 30px #a67d2b, 0 0 40px #a67d2b;
+    }
+    to {
+      text-shadow: 0 0 10px #a08b27, 0 0 20px #a08b27, 0 0 30px #a08b27, 0 0 40px #a08b27;
+    }
+ }
+
+// cfb53b
+
+
 
 .bounder {
   border-style: solid;

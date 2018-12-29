@@ -33,7 +33,10 @@ class GoalsIndexTile extends Component {
     let taskStatus;
     let descStatus;
     if (this.props.checked == 0) {
-      indicator = <i className="far fa-square" onClick={this.progress}></i>
+      indicator =
+        <div className="potentially">
+          <i className="far fa-square" onClick={this.progress}></i>
+        </div>
       taskStatus = <div>{this.props.task}:</div>
       descStatus = <div>{this.props.desc}</div>
     } else if (this.props.checked == 1) {
