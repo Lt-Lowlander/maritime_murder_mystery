@@ -15,10 +15,21 @@
  *= require foundation_and_overrides
 
  */
+
 #sea-dragon {
   position: fixed;
   height: 100%;
   width: 100%;
+}
+
+.sign-in-background {
+  background-image: url("./sleuthing.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100% !important;
 }
 
 .clear-back { background-color: transparent; }
@@ -35,7 +46,17 @@ transform: translate(-60%, 0);
   margin: auto;
 }
 
-.boat-icon {   margin-top: 6.6rem;
+.enter-sesh .field input {
+  margin-bottom: 1.4rem;
+  width: 100%;
+}
+
+.enter-sesh .sesh-clicker input {
+  margin-bottom: 1.4rem;
+  color: #3c3c3c;
+}
+
+.boat-icon {   margin-top: 5.1rem;
                font-size: 3rem; }
 
 .site-text{ color: #c0c0c0; }
