@@ -5,18 +5,14 @@ class SecretsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      patronId: "",
-      position: "",
-      group: "",
-      name: "",
       secret: "",
-      information: "",
-      clearance: ""
+      clue: "",
+      clearance: "",
     };
   }
 
   componentDidMount(){
-    fetch(`/api/v1/users/${this.props.params.id}`, {
+    fetch(`/api/v1/users/${this.props.params.id}/secrets`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -32,17 +28,10 @@ class SecretsContainer extends Component {
     .then(body => {
       this.setState({
         clearance: body.clearance,
-        patronId: body.patron[0].id,
-        position: body.patron[0].position,
-        group: body.patron[0].faction_id,
-        name: body.patron[0].character
+        secret: body.char_secret[0].sec_desc,
+        clue: body.char_info[0].info_desc
       })
-      if (body.clearance === "character") {
-        this.setState({
-          secret: body.patron[0].char_secret.sec_desc,
-          information: body.patron[0].char_info.info_desc
-        })
-      }
+
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -59,7 +48,7 @@ class SecretsContainer extends Component {
               <i className="far fa-eye"></i>
             </div>
             <div className="heading-text limey">
-              Secret and Information
+              Secret and Clue
             </div>
           </div>
           <div className="marg1">
@@ -72,10 +61,10 @@ class SecretsContainer extends Component {
           </div>
           <div className="marg1">
             <div className="limey">
-              Information
+              Clue
             </div>
             <div className="deco">
-              {this.state.information}
+              {this.state.clue}
             </div>
           </div>
         </div>

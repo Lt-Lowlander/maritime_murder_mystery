@@ -7,17 +7,14 @@ class ConnectionsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      patronId: "",
-      position: "",
-      group: "",
-      name: "",
+      clearance: "",
       otherPeople: [],
       beginnerTips: []
     };
   }
 
   componentDidMount(){
-    fetch(`/api/v1/users/${this.props.params.id}`, {
+    fetch(`/api/v1/users/${this.props.params.id}/connections`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -32,18 +29,10 @@ class ConnectionsIndexContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        patronId: body.patron[0].id,
-        position: body.patron[0].position,
-        group: body.patron[0].faction_id,
-        name: body.patron[0].character,
-        clearance: body.clearance
+        clearance: body.clearance,
+        otherPeople: body.others,
+        beginnerTips: body.tips
       })
-      if (body.clearance === "character") {
-        this.setState({
-          otherPeople: body.patron[0].other_people,
-          beginnerTips: body.patron[0].beginner_tips
-        })
-      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }

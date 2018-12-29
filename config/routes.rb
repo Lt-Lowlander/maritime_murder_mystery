@@ -26,6 +26,9 @@ Rails.application.routes.draw do
         resources :goals
         resources :abilities
         resources :notes
+        resources :background
+        resources :secrets
+        resources :connections
       end
     end
   end
