@@ -5,14 +5,13 @@ class BackgroundContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewer: "",
       clearance: "",
       background: ""
     };
   }
 
   componentDidMount(){
-    fetch(`/api/v1/users/${this.props.params.id}`, {
+    fetch(`/api/v1/users/${this.props.params.id}/background`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -27,12 +26,9 @@ class BackgroundContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        viewer: body.viewer,
+        background: body.char_story[0].char_story,
         clearance: body.clearance
       });
-      if (body.clearance === "character") {
-        this.setState({ background: body.patron[0].char_story.char_story })
-      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
