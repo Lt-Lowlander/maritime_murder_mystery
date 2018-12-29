@@ -1,35 +1,37 @@
-<script type="text/javascript">
-  document.getElementById("ship-log").style.display = "none";
-</script>
-<h2 class="limey visitor-message marg1">Come Set Sail</h2>
+<div class="sign-in-background">
+  <script type="text/javascript">
+    document.getElementById("ship-log").style.display = "none";
+  </script>
+  <h2 class="limey visitor-message marg2">Come Set Sail</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="grid-x grid-margin-x align-spaced">
-  <div class="cell small-10 medium-6 large-4">
-    <div class="enter-sesh">
-      <div class="field deco">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="grid-x grid-margin-x align-spaced">
+    <div class="cell small-10 medium-6 large-4">
+      <div class="enter-sesh">
+        <div class="field deco">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-      <div class="field deco">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
+        <div class="field deco">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
 
-      <% if devise_mapping.rememberable? -%>
-      <div class="field veiled">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-      <% end -%>
+        <% if devise_mapping.rememberable? -%>
+        <div class="hide">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+        <% end -%>
 
-      <div class="actions sesh-clicker limey">
-        <%= f.submit "Log in" %>
+        <div class="actions sesh-clicker limey">
+          <%= f.submit "Log in" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<% end %>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

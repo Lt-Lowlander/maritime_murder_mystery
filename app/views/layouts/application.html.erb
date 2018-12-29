@@ -113,9 +113,13 @@
     </div>
     <%- else -%>
       <div id="ship-log" class="sign-in">
-        <%= link_to user_session_path, class: "btn btn-default" do %>
-          <div class="boat-icon"><span class="veiled">|</span><i class="fas fa-ship"></i></div>
-        <% end %>
+          <div class="boat-icon"><span class="veiled">|</span>
+            <div class="presently">
+              <%= link_to user_session_path, class: "btn btn-default" do %>
+                <i class="fas fa-ship"></i>
+              <% end %>
+            </div>
+          </div>
       </div>
 
       <div id="flash-messages">
