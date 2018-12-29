@@ -109,7 +109,8 @@ class UsersStatusContainer extends Component {
         group={this.state.patronData.faction_id}
         name={this.state.patronData.character}
       />
-    let notesList = this.state.notes.map(entry => {
+    const orderedNotes = this.state.notes.sort(function(a, b){return a.id - b.id});
+    let notesList = orderedNotes.map(entry => {
         return(
           <NotesListTile
             key={entry.id}

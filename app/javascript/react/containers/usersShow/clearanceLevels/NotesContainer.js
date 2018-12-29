@@ -86,7 +86,8 @@ class NotesContainer extends Component {
     document.getElementById("sea-dragon").className = "sleuthing";
     document.getElementById("notes").className = "notes-hud presently";
     let doorman;
-    let notesList = this.state.notes.map(entry => {
+    const orderedNotes = this.state.notes.sort(function(a, b){return a.id - b.id});
+    let notesList = orderedNotes.map(entry => {
       return(
         <NotesListTile
           key={entry.id}
