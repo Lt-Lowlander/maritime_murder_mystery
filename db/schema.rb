@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_015829) do
 
   create_table "player_notes", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.integer "author_id", null: false
     t.integer "subject_id", null: false
     t.string "subject_char", null: false
     t.text "note_contents", null: false

@@ -12,9 +12,10 @@ class Api::V1::NotesController < ApiController
     #   binding.pry
     # end
     beacon = params.permit(:user_id)
+    # binding.pry
     if beacon.values[0].to_i == current_user.id
       notepad = {
-        notes: PlayerNote.where(user_id: params[:user_id]),
+        notes: PlayerNote.where(author_id: params[:user_id]),
         inspector: current_user.id,
         clearance: "character"
       }
@@ -29,11 +30,10 @@ class Api::V1::NotesController < ApiController
     end
   end
 
-
   def create
     note = PlayerNote.new(clues_dets)
     if note.save
-        notes = PlayerNote.where(user_id: params[:user_id])
+      notes = PlayerNote.where(author_id: current_user.id, subject_id: params[:subject_id])
       render json: notes
     else
       payload = { errors: note.errors.full_messages }
@@ -45,11 +45,11 @@ class Api::V1::NotesController < ApiController
 
   private
   def clue_params
-    params.permit(:note_contents, :subject_id, :user_id)
+    params.permit(:note_contents, :subject_id, :author_id, :user_id)
   end
 
   def clues_dets
-    beacon = params.permit(:user_id)
+    beacon = params.permit(:subject_id)
     spec_num = beacon.values[0].to_i
     r = User.find_by(id: spec_num).attributes.slice('character')
     clue_params.merge(subject_char: r.values[0])
