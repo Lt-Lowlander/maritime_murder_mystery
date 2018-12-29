@@ -3,16 +3,7 @@ class Api::V1::NotesController < ApiController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    # trodden_trail = request.referrer
-    # if trodden_trail = "http://localhost:3000/users/#{:id}/notes"
-    #   binding.pry
-    # end
-    # paved_path = request.referrer
-    # if paved_path = "http://localhost:3000/users/#{:id}"
-    #   binding.pry
-    # end
     beacon = params.permit(:user_id)
-    # binding.pry
     if beacon.values[0].to_i == current_user.id
       notepad = {
         notes: PlayerNote.where(author_id: params[:user_id]),

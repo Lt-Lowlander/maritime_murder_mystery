@@ -22,11 +22,6 @@ const NotesListTile = (props) => {
   } else {
     recordedClue = <div></div>
   }
-  // props.userUrl (:id number of the person whose page you're viewing)
-  // props.author (author_id)
-  // props.pOfIntId (subject_id)
-  // props.pOfIntName (subject_char)
-  // props.contents (note_contents)
   return(
     <li>
       {recordedClue}
