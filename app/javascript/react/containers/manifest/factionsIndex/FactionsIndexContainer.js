@@ -38,7 +38,7 @@ class FactionsIndexContainer extends Component {
       <div className="limey marg1">
         <div className="faction-headings">
           {this.props.group}
-          <span>  </span>
+          <span className="symbol-spacing">  </span>
           <GroupSymbolTile
             group={this.props.id}
             />

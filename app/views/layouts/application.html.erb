@@ -28,7 +28,9 @@
       }, false);
     </script>
     <div id="sea-dragon">
-      <button data-toggle-fullscreen> toggle fullscreen</button>
+      <div class="toggle-fullscreen">
+        <button data-toggle-fullscreen> toggle fullscreen</button>
+      </div>
       <nav id="navbar" class="chart-bar">
         <div class="columnar-stacking">
           <div class="padding-topper veiled">you can do it!</div>
@@ -46,33 +48,21 @@
             </div>
             <div class="user-controls">
               <button id=char-hud-down class="user-hud-toggle" onclick="charConSwitch()">
-                <i class="fas fa-caret-down"></i>
-              </button>
-              <button id=char-hud-up class="user-hud-toggle" onclick="charConSwitch()">
-                <i class="fas fa-caret-up"></i>
+                <i class="fas fa-user-circle"></i>
               </button>
               <script type="text/javascript">
                 function charConSwitch() {
-                  var downer = document.getElementById("char-hud-down");
-                  var uppity = document.getElementById("char-hud-up");
                   var change = document.getElementById("char-cons");
                   var decor = document.getElementById("divider");
                   if (change.style.display === "none"){
                     change.style.display = "flex";
                     decor.style.display = "block";
-                    uppity.style.display = "flex";
-                    downer.style.display = "none";
                   } else {
                     change.style.display = "none";
                     decor.style.display = "none";
-                    uppity.style.display = "none";
-                    downer.style.display = "flex";
                   }
                 }
               </script>
-              <div id="status" class="user-status">
-                <a href="/users/<%=current_user.id%>"><i class="fas fa-user-circle"></i></a>
-              </div>
             </div>
           </div>
           <img id="divider" class="bar-divider" src="/deco-divider.svg"></img>

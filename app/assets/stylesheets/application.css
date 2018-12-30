@@ -88,7 +88,7 @@ button {
 .chart-bar { display: flex;
              text-align: center;
              justify-content: center;
-             margin-top: 1.2;}
+             }
 .columnar-stacking { flex-direction: column; }
   .padding-topper{ order: 1; }
   .event-hud { order: 2;
@@ -104,9 +104,10 @@ button {
                       margin-left: 1rem; }
     .user-controls { order: 2;
                      font-size: 2rem;
-                     margin-left: 7rem;
+                     margin-left: 9.4rem;
                      display: flex;}
-      .user-hud-toggle { order: 1; }
+      .user-hud-toggle { order: 1;
+                           color: #1779ba;}
       .user-status { order: 2;
                     margin-left: 1rem;}
   .bar-divider { order: 3;
