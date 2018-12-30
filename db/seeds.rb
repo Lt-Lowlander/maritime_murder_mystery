@@ -12,8 +12,8 @@ narratives = Narrative.create!([
 
 # Create Characters
 users = User.create!([
-  {email: "kal444h@gmail.com", password: "asdf123", faction_id: "1", role: "admin", attendee: "Kirk Lansman", position: "Game Moderator", character: "Tiberius", title: "Host", tagline: "See me for any gameplay questions"},
-  {email: "siconninja@gmail.com", password: "asdf123", faction_id: "1", role: "admin", attendee: "Carmine Iannacone", position: "Game Moderator", character: "Sicon", title: "Host", tagline: "See me for any gameplay questions"},
+  {email: "kal444h@gmail.com", password: "asdf123", faction_id: "1", role: "admin", attendee: "Kirk Lansman", position: "Game Moderator", character: "Phillip Hemmensworth", title: "Ship Enthusiast", tagline: "See me for any gameplay-related questions"},
+  {email: "siconninja@gmail.com", password: "asdf123", faction_id: "1", role: "admin", attendee: "Carmine Iannacone", position: "Game Moderator", character: "Billy Bay", title: "Marine Surveyor", tagline: "See me for any gameplay-related questions"},
   {email: "zpastore@wesleyan.edu", password: "flooring", faction_id: "2", role: "member", attendee: "Zach Pastore", position: "First Officer", character: "Daniel Warren", title: "35, American", tagline: "Competent First Officer, well liked by the crew and expected to be given command of a ship as soon as possible. Reports to the Captain."},
   {email: "rich.keohane@gmail.com", password: "seating", faction_id: "2", role: "member",  attendee: "Richard Keohane",position: "Second Officer", character: "David Whitworth", title: "47, English", tagline: "Reliable and competent officer, previously sailed with the Royal Merchant Navy. Reports to the First Officer."},
   {email: "jacqueline.s.pastore@gmail.com", password: "watchmen", faction_id: "2", role: "member",  attendee: "Jacqui Pastore",position: "Third Officer", character: "Christina Younger", title: "36, American", tagline: "The highest placed woman in the Cruise Line and has sacrificed her personal life for her career. Reports to the Second Officer."},
