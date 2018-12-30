@@ -1,8 +1,25 @@
 .sub-heading { text-align: center;
-               justify-content: center;}
+               justify-content: center;
+              margin-bottom: 2rem;}
 
-.list-and-entry { flex-direction: column; }
-    .list-of-notes { order: 1; }
+.deco-corner { height: 4rem;
+                stroke-width: 6; }
+    .top-left { float: left;
+                margin-left: 1rem; }
+    .top-right { float: right;
+                 transform: rotate(90deg);
+                 margin-right: 1rem;}
+    .bottom-left { float: left;
+                   margin-left: 1rem;
+                   transform: rotate(-90deg);}
+    .bottom-right { float: right;
+                    margin-right: 1rem;
+                    transform: rotate(180deg); }
+
+.list-and-entry { flex-direction: column;
+                  margin: 2rem; }
+    .list-of-notes { order: 1;
+                    margin-top: 8rem;}
     .notes-entry-form { order: 2;
                         width: 100%;
                         height: 1.4rem;}

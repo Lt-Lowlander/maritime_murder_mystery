@@ -7,7 +7,7 @@ const FactionMembersTile = (props) => {
   let rank;
   if (props.position !=="") {
     rank =
-    <span>, {props.position}</span>
+    <span className="crew-position"> {props.position}</span>
   }
   if (props.viewer == "onboard") {
     if (props.viewerId === props.id) {

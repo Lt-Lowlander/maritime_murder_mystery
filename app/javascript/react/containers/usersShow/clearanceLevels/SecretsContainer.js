@@ -51,20 +51,40 @@ class SecretsContainer extends Component {
               Secret and Clue
             </div>
           </div>
+          <div className="vert-spacer">.</div>
           <div className="marg1">
-            <div className="limey">
-              Secret
-            </div>
-            <div className="deco">
-              {this.state.secret}
+            <div className="contain">
+              <div className="roman-border">
+                  <span className="bg-first"></span>
+                  <span className="bg-second"></span>
+                  <span className="bg-third"></span>
+                  <div>
+                    <div className="limey">
+                      Secret
+                    </div>
+                    <div className="secret-text deco">
+                      {this.state.secret}
+                    </div>
+                  </div>
+              </div>
             </div>
           </div>
+          <div className="vert-spacer">.</div>
           <div className="marg1">
-            <div className="limey">
-              Clue
-            </div>
-            <div className="deco">
-              {this.state.clue}
+            <div className="contain">
+              <div className="roman-border">
+                  <span className="bg-first"></span>
+                  <span className="bg-second"></span>
+                  <span className="bg-third"></span>
+                  <div>
+                    <div className="limey">
+                      Clue
+                    </div>
+                    <div className="secret-text deco">
+                      {this.state.clue}
+                    </div>
+                  </div>
+              </div>
             </div>
           </div>
         </div>

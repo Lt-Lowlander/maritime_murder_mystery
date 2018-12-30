@@ -9,17 +9,19 @@ const LetterHeadTile = (props) => {
   return(
     <div className="visitor-tile limey marg1">
       {rank}
-      <div className="char-cast">
-        -=
-        <span>  </span>
-        <GroupSymbolTile
-        group={props.group}
-        />
-        <span> </span>
-        <span>
-          {props.name} =-
+      <div className="char-cast letter-header">
+        <img className="ornament-left" src="/name-ornament-mirror.svg"></img>
+        <span className="within-bookends">
+          <span>  </span>
+          <GroupSymbolTile
+            group={props.group}
+            />
+          <span> </span>
+          <span className="namebox">
+            {props.name}
+          </span>
         </span>
-        '(some floral decoration beflanking the name)'
+        <img className="ornament-right" src="/name-ornament.svg"></img>
       </div>
     </div>
   )

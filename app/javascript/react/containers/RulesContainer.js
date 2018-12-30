@@ -48,8 +48,8 @@ class RulesContainer extends Component {
       this.evenKeel("char-cons")
       this.evenKeel("divider")
     }
-    const regulations = this.state.rules;
-    let structure = regulations.map(regl => {
+    const orderedRegs = this.state.rules.sort(function(a, b){return a.id - b.id});
+    let structure = orderedRegs.map(regl => {
       return(
         <RulesIndexTile
           key={regl.id}
