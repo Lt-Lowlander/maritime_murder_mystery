@@ -9,6 +9,69 @@ class SecretsContainer extends Component {
       clue: "",
       clearance: "",
     };
+    this.shareSecretToggle=this.shareSecretToggle.bind(this)
+    this.shareClueToggle=this.shareClueToggle.bind(this)
+  }
+
+  shareSecretToggle(event){
+    event.preventDefault()
+    var navDisp = document.getElementById("navbar");
+    var eye = document.getElementById("eye");
+    var secHeadDisp = document.getElementById("secHeading");
+    var subHeadDisp = document.getElementById("secSubHeading");
+    var clueDisp = document.getElementById("clueTile");
+    var b1 = document.getElementById("b1");
+    var b2 = document.getElementById("b2");
+    var b3 = document.getElementById("b3");
+    if (clueDisp.style.display === "") {
+      clueDisp.style.display = "none";
+      eye.style.display = "none";
+      navDisp.style.display = "none";
+      secHeadDisp.style.display = "none";
+      subHeadDisp.style.display = "none";
+      b1.className ="bg-first presently"
+      b2.className ="bg-second presently"
+      b3.className ="bg-third presently"
+    } else {
+      clueDisp.style.display = "";
+      eye.style.display = "";
+      navDisp.style.display = "";
+      secHeadDisp.style.display = "";
+      subHeadDisp.style.display = "";
+      b1.className ="bg-first"
+      b2.className ="bg-second"
+      b3.className ="bg-third"
+    }
+  }
+  shareClueToggle(event){
+    event.preventDefault()
+    var navDisp = document.getElementById("navbar");
+    var eye = document.getElementById("eye");
+    var secHeadDisp = document.getElementById("secHeading");
+    var subHeadDisp = document.getElementById("secSubHeading");
+    var secDisp = document.getElementById("secretTile");
+    var b1 = document.getElementById("b1");
+    var b2 = document.getElementById("b2");
+    var b3 = document.getElementById("b3");
+    if (secDisp.style.display === "") {
+      secDisp.style.display = "none";
+      eye.style.display = "none";
+      navDisp.style.display = "none";
+      secHeadDisp.style.display = "none";
+      subHeadDisp.style.display = "none";
+      b1.className ="bg-first presently"
+      b2.className ="bg-second presently"
+      b3.className ="bg-third presently"
+    } else {
+      secDisp.style.display = "";
+      eye.style.display = "";
+      navDisp.style.display = "";
+      secHeadDisp.style.display = "";
+      subHeadDisp.style.display = "";
+      b1.className ="bg-first"
+      b2.className ="bg-second"
+      b3.className ="bg-third"
+    }
   }
 
   componentDidMount(){
@@ -43,21 +106,24 @@ class SecretsContainer extends Component {
       if (this.state.clearance === "character") {
         doorman=
         <div>
-          <div className="page-heading marg1">
-            <div className="heading-icon">
+          <div className="page-heading marg3">
+            <div id="eye" className="heading-icon">
               <i className="far fa-eye"></i>
             </div>
-            <div className="heading-text limey">
+            <div id="secHeading" className="heading-text limey">
               Secret and Clue
             </div>
           </div>
+          <i id="secSubHeading" className="deco marg2">
+            Tap on an individual item to hide the rest of the page when sharing info
+          </i>
           <div className="vert-spacer">.</div>
-          <div className="marg1">
-            <div className="contain">
-              <div className="roman-border">
-                  <span className="bg-first"></span>
-                  <span className="bg-second"></span>
-                  <span className="bg-third"></span>
+          <div className="tile-centering">
+            <div id="secretTile" className="contain" onClick={this.shareSecretToggle}>
+              <div id="romanBorder" className="roman-border">
+                  <span id="b1" className="bg-first"></span>
+                  <span id="b2" className="bg-second"></span>
+                  <span id="b3" className="bg-third"></span>
                   <div>
                     <div className="limey">
                       Secret
@@ -68,14 +134,12 @@ class SecretsContainer extends Component {
                   </div>
               </div>
             </div>
-          </div>
-          <div className="vert-spacer">.</div>
-          <div className="marg1">
-            <div className="contain">
-              <div className="roman-border">
-                  <span className="bg-first"></span>
-                  <span className="bg-second"></span>
-                  <span className="bg-third"></span>
+            <div className="vert-spacer">.</div>
+            <div id="clueTile" className="contain" onClick={this.shareClueToggle}>
+              <div id="romanBorder" className="roman-border">
+                  <span id="b1" className="bg-first"></span>
+                  <span id="b2" className="bg-second"></span>
+                  <span id="b3" className="bg-third"></span>
                   <div>
                     <div className="limey">
                       Clue
