@@ -23,24 +23,24 @@ class SecretsContainer extends Component {
     var b1 = document.getElementById("b1");
     var b2 = document.getElementById("b2");
     var b3 = document.getElementById("b3");
-    if (clueDisp.style.display === "") {
-      clueDisp.style.display = "none";
-      eye.style.display = "none";
-      navDisp.style.display = "none";
-      secHeadDisp.style.display = "none";
-      subHeadDisp.style.display = "none";
-      b1.className ="bg-first presently"
-      b2.className ="bg-second presently"
-      b3.className ="bg-third presently"
+    if (clueDisp.className === "contain") {
+      clueDisp.className = "contain veiled";
+      eye.className = "heading-icon veiled";
+      navDisp.className = "chart-bar veiled";
+      secHeadDisp.className = "heading-text limey veiled";
+      subHeadDisp.className = "deco marg2 veiled";
+      b1.className ="bg-first presently";
+      b2.className ="bg-second presently";
+      b3.className ="bg-third presently";
     } else {
-      clueDisp.style.display = "";
-      eye.style.display = "";
-      navDisp.style.display = "";
-      secHeadDisp.style.display = "";
-      subHeadDisp.style.display = "";
-      b1.className ="bg-first"
-      b2.className ="bg-second"
-      b3.className ="bg-third"
+      clueDisp.className = "contain";
+      eye.className = "heading-icon";
+      navDisp.className = "chart-bar";
+      secHeadDisp.className = "heading-text limey";
+      subHeadDisp.className = "deco marg2";
+      b1.className ="bg-first";
+      b2.className ="bg-second";
+      b3.className ="bg-third";
     }
   }
   shareClueToggle(event){
@@ -53,24 +53,24 @@ class SecretsContainer extends Component {
     var b1 = document.getElementById("b1");
     var b2 = document.getElementById("b2");
     var b3 = document.getElementById("b3");
-    if (secDisp.style.display === "") {
-      secDisp.style.display = "none";
-      eye.style.display = "none";
-      navDisp.style.display = "none";
-      secHeadDisp.style.display = "none";
-      subHeadDisp.style.display = "none";
-      b1.className ="bg-first presently"
-      b2.className ="bg-second presently"
-      b3.className ="bg-third presently"
+    if (secDisp.className === "contain") {
+      secDisp.className = "contain veiled";
+      eye.className = "heading-icon veiled";
+      navDisp.className = "chart-bar veiled";
+      secHeadDisp.className = "heading-text limey veiled";
+      subHeadDisp.className = "deco marg2 veiled";
+      b1.className ="bg-first presently";
+      b2.className ="bg-second presently";
+      b3.className ="bg-third presently";
     } else {
-      secDisp.style.display = "";
-      eye.style.display = "";
-      navDisp.style.display = "";
-      secHeadDisp.style.display = "";
-      subHeadDisp.style.display = "";
-      b1.className ="bg-first"
-      b2.className ="bg-second"
-      b3.className ="bg-third"
+      secDisp.className = "contain";
+      eye.className = "heading-icon";
+      navDisp.className = "chart-bar";
+      secHeadDisp.className = "heading-text limey";
+      subHeadDisp.className = "deco marg2";
+      b1.className ="bg-first";
+      b2.className ="bg-second";
+      b3.className ="bg-third";
     }
   }
 
