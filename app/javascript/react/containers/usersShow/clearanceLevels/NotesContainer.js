@@ -115,7 +115,11 @@ class NotesContainer extends Component {
           <div className="sub-heading deco">
             Keep track of your clues, leads, and suspicions here
           </div>
-          <div className="list-and-entry marg1">
+          <div className="top-border">
+            <img className="deco-corner top-left" src="/deco-corner.svg"></img>
+            <img className="deco-corner top-right" src="/deco-corner.svg"></img>
+          </div>
+          <div className="list-and-entry">
             <ul className="list-of-notes deco">
               {notesList}
             </ul>
@@ -124,6 +128,10 @@ class NotesContainer extends Component {
               handleChange={this.handleChange}
               handlePost={this.handlePost}
               />
+          </div>
+          <div className="bottom-border">
+            <img className="deco-corner bottom-left" src="/deco-corner.svg"></img>
+            <img className="deco-corner bottom-right" src="/deco-corner.svg"></img>
           </div>
         </div>
     } else if (this.state.clearance === "gumshoe") {
