@@ -142,12 +142,21 @@ class UsersStatusContainer extends Component {
       doorman =
         <div>
         {letterHead}
-          <div className="deco marg1">
-            {this.state.patronData.title}
-            <br/>
-            {this.state.patronData.tagline}
+          <div className="patron-info deco marg1">
+            <ul>
+              <li>
+                {this.state.patronData.title}
+              </li>
+              <li>
+                {this.state.patronData.tagline}
+              </li>
+            </ul>
           </div>
-          <div className="limey marg1">
+          <div className="top-border">
+            <img className="deco-corner top-left" src="/deco-corner.svg"></img>
+            <img className="deco-corner top-right" src="/deco-corner.svg"></img>
+          </div>
+          <div className="heading-text limey marg1">
             Notes:
           </div>
           <div className="list-and-entry marg1">
@@ -160,37 +169,11 @@ class UsersStatusContainer extends Component {
               handlePost={this.handlePost}
               />
           </div>
-        </div>
-    } else if (viewerClearance == "character") {
-      doorman =
-      <div>
-        {letterHead}
-        <div>
-          <div className="heading-text marg1 limey">
-            Character Status
+          <div className="bottom-border">
+            <img className="deco-corner bottom-left" src="/deco-corner.svg"></img>
+            <img className="deco-corner bottom-right" src="/deco-corner.svg"></img>
           </div>
         </div>
-        <div className="deco marg2">
-          Here you can keep track of your progress
-          <ul>
-            <li>
-              number of completed vs. remaining goals
-            </li>
-            <li>
-              abilities used vs. remaining
-            </li>
-            <li>
-              total notes count
-            </li>
-            <li>
-              number of connections made (calculated as the sum of unique user_id's appearing in your notes)
-            </li>
-            <li>
-              etc.
-            </li>
-          </ul>
-        </div>
-      </div>
     }
     return(
       <div className="page-body">
