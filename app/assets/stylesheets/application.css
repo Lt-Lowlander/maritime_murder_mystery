@@ -32,6 +32,11 @@
   width: 100% !important;
 }
 
+.full-screen {
+  height: 1rem;
+  filter: invert(83%) sepia(12%) saturate(0%) hue-rotate(228deg) brightness(93%) contrast(86%);
+}
+
 .clear-back { background-color: transparent; }
 
 .sign-in {
@@ -64,6 +69,13 @@ transform: translate(-60%, 0);
 .veiled { opacity: 0.0; }
 
 #char-hud-up { display: none; }
+
+button:focus {outline:0;}
+
+button:active {
+outline: none;
+border: none;
+}
 
 button {
   color: #c0c0c0;
@@ -104,12 +116,12 @@ button {
                       margin-left: 1rem; }
     .user-controls { order: 2;
                      font-size: 2rem;
-                     margin-left: 9.4rem;
+                     margin-left: 6.9rem;
                      display: flex;}
-      .user-hud-toggle { order: 1;
-                           color: #1779ba;}
-      .user-status { order: 2;
-                    margin-left: 1rem;}
+      .toggle-fullcreen { order: 1;}
+      .user-hud-toggle { order: 2;
+                         color: #1779ba;
+                         margin-left: 1rem;}
   .bar-divider { order: 3;
                  filter: invert(83%) sepia(12%) saturate(0%) hue-rotate(228deg) brightness(93%) contrast(86%);
                  width: 75%;
