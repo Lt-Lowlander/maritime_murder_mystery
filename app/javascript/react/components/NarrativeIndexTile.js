@@ -7,7 +7,7 @@ const NarrativeIndexTile = (props) => {
         {props.heading}
       </div>
       <div className="narr-content deco">
-        {props.content}
+        <div dangerouslySetInnerHTML={{ __html: props.content.replace(/\n/g, '<br />')}} />
       </div>
     </div>
   )

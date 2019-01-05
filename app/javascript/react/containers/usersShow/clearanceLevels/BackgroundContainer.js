@@ -51,7 +51,7 @@ class BackgroundContainer extends Component {
           </div>
         </div>
         <div className="deco marg2">
-          {this.state.background}
+          <div dangerouslySetInnerHTML={{ __html: this.state.background.replace(/\n\n/g, '<br />')}} />
         </div>
       </div>
     } else if (this.state.clearance === "gumshoe") {
