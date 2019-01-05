@@ -5,6 +5,11 @@
 This project serves as a proof-of-concept reference guide to help facilitate murder mystery parties.  Users should be able to read an overview of the event theme, review important details about their character, view a comprehensive list of the whole cast, and make notes as they discover new information.
 
 * On the web: https://murder-at-sea.herokuapp.com/
+    Built to accommodate responsive web design, access the site from a mobile device for the most representative user experience.
+
+    Visitor log-in credentials:
+    username: sample@email.com
+    password: demonstration
 
 * Local Deployment instructions:
 
