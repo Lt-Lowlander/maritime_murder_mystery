@@ -79,5 +79,20 @@ font-family: 'Berkshire Swash', cursive;
 <i class="fab fa-d-and-d"></i>
 <i class="fas fa-satellite-dish"></i>
 
+**Link to specific character pages when their names are mentioned:
+https://forum.aspose.com/t/replace-text-with-hyperlink/125309
+https://www.sitepoint.com/community/t/javascript-word-to-link-replacer/44639
 
+**fullscreen toggling
+https://stackoverflow.com/questions/25980431/how-to-change-to-fullscreen-the-entire-webpage-with-confirm
+https://developers.google.com/web/fundamentals/native-hardware/fullscreen/
+
+Formatting the story seed info
+https://stackoverflow.com/questions/27934238/rendering-raw-html-with-reactjs/27958683
+
+Working with .svg images
 https://stackoverflow.com/questions/22252472/change-svg-color
+
+Parser Info
+https://github.com/documentcloud/docsplit
+https://blog.joshsoftware.com/2014/08/13/pdf-to-plain-text-processing-using-docsplit/
