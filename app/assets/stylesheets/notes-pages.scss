@@ -1,30 +1,54 @@
+.doorman { flex-direction: column; }
+    .page-heading { order: 1; }
+    .sub-heading { order: 2; }
+    .top-border { order: 3;
+                  display: flex;
+                  justify-content: space-around;
+                }
+    .list-and-entry { order: 4; }
+    .bottom-border { order: 5;
+                     display: flex;
+                     justify-content: space-around;
+                   }
+
+.heading-styler {
+  margin-left: 3rem;
+}
+
 .sub-heading { text-align: center;
                justify-content: center;
               margin-bottom: 2rem;}
 
 .deco-corner { height: 4rem;
                 stroke-width: 6; }
-    .top-left { float: left;
-                margin-left: 1rem; }
-    .top-right { float: right;
+    .top-left {
+                margin-left: 1rem;
+                margin-right: auto;
+              }
+    .top-right {
                  transform: rotate(90deg);
-                 margin-right: 1rem;}
-    .bottom-left { float: left;
+                 margin-left: auto;
+                 margin-right: 1rem;
+               }
+    .bottom-left {
+                   transform: rotate(-90deg);
                    margin-left: 1rem;
-                   transform: rotate(-90deg);}
-    .bottom-right { float: right;
+                   margin-right: auto;
+                 }
+    .bottom-right {
+                    margin-left: auto;
                     margin-right: 1rem;
-                    transform: rotate(180deg); }
+                    transform: rotate(180deg);
+                  }
 
 .list-and-entry { flex-direction: column;
                   margin: 2rem; }
-    .list-of-notes { order: 1;
-                    margin-top: 8rem;}
+    .list-of-notes { order: 1; }
     .notes-entry-form { order: 2;
                         width: 100%;
-                        height: 1.4rem;}
-        .lbldv { float: left;
- }
+                        height: 1.4rem;
+                      }
+        .lbldv { float: left; }
         .lbldv input { width: 14rem;}
         .send-clicker { float: left;
                         margin-left: 1rem;}
