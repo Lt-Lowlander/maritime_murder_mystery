@@ -24,6 +24,8 @@
 
 .sign-in-background {
   background-image: url("./sleuthing.png");
+  -webkit-background-size: 100%;
+  -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -72,16 +74,9 @@ transform: translate(-60%, 0);
 
 #char-hud-up { display: none; }
 
-/* button:focus {outline:0;}
-
-button:active {
-outline: none;
-border: none;
-}
-
-button {
-  color: #c0c0c0;
-} */
+button:focus {outline:0;}
+button:active { outline: none; border: none; }
+button { color: #c0c0c0; }
 
 .presently {
     color: #fff;
