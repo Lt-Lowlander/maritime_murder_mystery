@@ -156,7 +156,7 @@ class UsersStatusContainer extends Component {
             <img className="deco-corner top-left" src="/deco-corner.svg"></img>
             <img className="deco-corner top-right" src="/deco-corner.svg"></img>
           </div>
-          <div className="heading-text limey marg1">
+          <div className="heading-styler limey marg1">
             Notes:
           </div>
           <div className="list-and-entry marg1">

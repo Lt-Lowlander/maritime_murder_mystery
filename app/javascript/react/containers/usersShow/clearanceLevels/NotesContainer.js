@@ -103,7 +103,7 @@ class NotesContainer extends Component {
 
     if (this.state.clearance === "character") {
       doorman =
-        <div>
+        <div className="doorman">
           <div className="page-heading">
             <div className="heading-icon">
               <i className="fas fa-search"></i>
