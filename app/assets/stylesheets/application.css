@@ -49,6 +49,8 @@ transform: translate(-60%, 0);
 
 .enter-sesh {
   margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .enter-sesh .field input {
@@ -70,7 +72,7 @@ transform: translate(-60%, 0);
 
 #char-hud-up { display: none; }
 
-button:focus {outline:0;}
+/* button:focus {outline:0;}
 
 button:active {
 outline: none;
@@ -79,7 +81,7 @@ border: none;
 
 button {
   color: #c0c0c0;
-}
+} */
 
 .presently {
     color: #fff;
@@ -104,6 +106,7 @@ button {
 .columnar-stacking { flex-direction: column; }
   .padding-topper{ order: 1; }
   .event-hud { order: 2;
+              width: 300px;
                display: flex; }
     .mystery-console { display: flex;
                        order: 1;
@@ -121,6 +124,7 @@ button {
       .toggle-fullcreen { order: 1;}
       .user-hud-toggle { order: 2;
                          color: #1779ba;
+                         cursor: pointer;
                          margin-left: 1rem;}
   .bar-divider { order: 3;
                  filter: invert(83%) sepia(12%) saturate(0%) hue-rotate(228deg) brightness(93%) contrast(86%);
