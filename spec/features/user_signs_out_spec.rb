@@ -12,7 +12,7 @@ feature 'user signs out', %Q{
   #   forgotten on the machine I'm using
 
   scenario 'authenticated user signs out' do
-    faction = FactoryBot.create(:faction)
+    faction = Faction.create({id: "1", fac_name: "Moderators"})
     user = FactoryBot.create(:user)
 
     visit new_user_session_path
